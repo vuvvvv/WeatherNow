@@ -1,17 +1,15 @@
-
-
 // دالة لإظهار العناصر
 function showelement () {
-  div1 = document.querySelector('.Weather-muna')
-  div2 = document.querySelector('.in-said-card')
+  const div1 = document.querySelector('.Weather-muna')
+  const div2 = document.querySelector('.in-said-card')
   div1.style.visibility = 'visible'
   div2.style.visibility = 'visible'
 }
 
 // دالة لإخفاء العناصر
 function hideelement () {
-  div1 = document.querySelector('.Weather-muna')
-  div2 = document.querySelector('.in-said-card')
+  const div1 = document.querySelector('.Weather-muna')
+  const div2 = document.querySelector('.in-said-card')
   div1.style.visibility = 'hidden'
   div2.style.visibility = 'hidden'
 }
@@ -28,22 +26,8 @@ async function showLocation () {
         '<div class="loader" id="loader"></div>'
       )
     navigator.geolocation.getCurrentPosition(onSuccess)
-    
   } else {
-    hideelement()
-    const animations = await lottie.loadAnimation({
-      container: document.getElementById('Lottie'),
-      path: '/assets/error.json', // انمايشن حالة الطقس
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-
-
-    })
-    hideelement()
-    removeLoader()
-    document.getElementById('Lottie').style.visibility = 'visible'
-    document.getElementById('Lottie').style.marginTop = '50px'
+    showErrorAnimation()
   }
 }
 
@@ -51,12 +35,10 @@ async function showLocation () {
 async function onSuccess (position) {
   let locationApiKey = 'dcbe7133d6764acc9f01b44eec762204'
   let weatherApiKey = '331c32dd574914f3ea9605314510dac2'
-  
 
   let { latitude, longitude } = position.coords
- 
+
   try {
-    
     let response = await fetch(
       `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
     )
@@ -67,23 +49,14 @@ async function onSuccess (position) {
 
     let { city, suburb } = allDetails
     document.getElementById('loca-weather').innerText = `${city} - ${suburb}`
-    
-    if (city != undefined ) {
+
+    if (city != undefined) {
       showelement()
       removeLoader()
-    } else {(city == undefined)
+    } else {
+      city == undefined
       hideelement().style.visibility = 'hidden'
-      const animations = await lottie.loadAnimation({
-        container: document.getElementById('Lottie'),
-        path: '/assets/error.json', // انمايشن حالة الطقس
-        renderer: 'svg',
-        loop: true,
-        autoplay: true
-      })
-      hideelement()
-      removeLoader()
-      document.getElementById('Lottie').style.visibility = 'visible'
-      document.getElementById('Lottie').style.marginTop = '50px'
+      showErrorAnimation()
     }
 
     let apiUrl = 'http://api.openweathermap.org/data/2.5/weather'
@@ -115,31 +88,10 @@ async function onSuccess (position) {
         autoplay: true
       })
     } catch (error) {
-      
-      const animations = await lottie.loadAnimation({
-        container: document.getElementById('Lottie'),
-        path: '/assets/error.json', // انمايشن حالة الطقس
-        renderer: 'svg',
-        loop: true,
-        autoplay: true
-      })
-      hideelement()
-      removeLoader()
-      document.getElementById('Lottie').style.visibility = 'visible'
-      document.getElementById('Lottie').style.marginTop = '50px'
+      showErrorAnimation()
     }
   } catch (error) {
-    const animations = await lottie.loadAnimation({
-      container: document.getElementById('Lottie'),
-      path: '/assets/error.json', // انمايشن حالة الطقس
-      renderer: 'svg',
-      loop: true,
-      autoplay: true
-    })
-    hideelement()
-    removeLoader()
-    document.getElementById('Lottie').style.visibility = 'visible'
-    document.getElementById('Lottie').style.marginTop = '50px'
+    showErrorAnimation()
   }
 }
 
@@ -151,11 +103,8 @@ function removeLoader () {
   }
 }
 
-showLocation()
 onSuccess()
-
-
-
+showLocation()
 
 // دالة لتحديد حالة الطقس وعرض الأنميشن المناسب
 function getWetherstate (weatherstate) {
@@ -195,3 +144,17 @@ function getWetherstate (weatherstate) {
   }
 }
 
+function showErrorAnimation () {
+  hideelement()
+  lottie.loadAnimation({
+    container: document.getElementById('Lottie'),
+    path: '/assets/error.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true
+  })
+  hideelement()
+  removeLoader()
+  document.getElementById('Lottie').style.visibility = 'visible'
+  document.getElementById('Lottie').style.marginTop = '50px'
+}
