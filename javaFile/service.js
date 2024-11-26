@@ -1,3 +1,5 @@
+
+
 // دالة لإظهار العناصر
 function showelement () {
   div1 = document.querySelector('.Weather-muna')
@@ -49,9 +51,10 @@ async function showLocation () {
 async function onSuccess (position) {
   let locationApiKey = 'dcbe7133d6764acc9f01b44eec762204'
   let weatherApiKey = '331c32dd574914f3ea9605314510dac2'
+  
 
   let { latitude, longitude } = position.coords
-
+ 
   try {
     
     let response = await fetch(
@@ -64,12 +67,23 @@ async function onSuccess (position) {
 
     let { city, suburb } = allDetails
     document.getElementById('loca-weather').innerText = `${city} - ${suburb}`
-    if (city !== 'undefined' && suburb !== 'undefined') {
+    
+    if (city != undefined ) {
       showelement()
       removeLoader()
-    } else {
-      document.querySelector('.loader')
+    } else {(city == undefined)
+      hideelement().style.visibility = 'hidden'
+      const animations = await lottie.loadAnimation({
+        container: document.getElementById('Lottie'),
+        path: '/assets/error.json', // انمايشن حالة الطقس
+        renderer: 'svg',
+        loop: true,
+        autoplay: true
+      })
       hideelement()
+      removeLoader()
+      document.getElementById('Lottie').style.visibility = 'visible'
+      document.getElementById('Lottie').style.marginTop = '50px'
     }
 
     let apiUrl = 'http://api.openweathermap.org/data/2.5/weather'
@@ -101,7 +115,7 @@ async function onSuccess (position) {
         autoplay: true
       })
     } catch (error) {
-      hideelement()
+      
       const animations = await lottie.loadAnimation({
         container: document.getElementById('Lottie'),
         path: '/assets/error.json', // انمايشن حالة الطقس

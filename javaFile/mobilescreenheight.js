@@ -1,7 +1,4 @@
 // دعم اجهزة الجوال الطويلة
-//بس بشوف يتحدث في الجات هاب ولا ل
-//hi
-
 function screenHeight (v) {
   v
   switch (v) {
@@ -37,3 +34,5 @@ function screenHeight (v) {
   }
 }
 screenHeight(screen.height)
+
+
