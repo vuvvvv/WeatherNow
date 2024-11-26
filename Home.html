@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>طقس اليوم</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssfile/page1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="small-device.css" />
+</head>
+
+<body>
+
+    <main class="card">
+
+
+
+        <div class="card-inner" id="cardInner">
+        </div>
+        <div class="in-said-card" id="insid-card">
+            <h1 class="loca-weather" id="loca-weather"></h1>
+            <h2 class="temprtcher" id="temp"></h2>
+            <h2 class="weather-state" id="state"></h2>
+            <div class="loadAnimation" id="Lottie">
+                <script src="javaFile/service.js"></script>
+            </div>
+        </div>
+        <div class="Weather-muna" id="allmuna">
+            <h2 class="wind"> الرياح: <i class="fa fa-wind fa-2.5xs"
+                    style="left: -25px ; position: absolute; top: 5px; "></i></h2>
+            <h2 class="wind1" id="wind1"></h2>
+            <h2 class="humidity"> الرطوبة: <i class="fa fa-hand-holding-droplet"></i></h2>
+            <h2 class="humidity1" id="hum"></h2>
+            <h2 class="rain">السحاب: <i class="fa-solid fa-cloud" style="position: absolute; top: 3px; left:-28px"></i>
+            </h2>
+            <h2 class="rain1" id="rain1"></h2>
+
+
+        </div>
+
+    </main>
+
+
+
+
+    <nav id="mySidebar" class="sidebar">
+        <a href="JavaScript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="Home.html">صفحة البداء</a>
+        <a  href="Details.html">النشرة الجوية</a>
+        <a  href="#clients">حول</a>
+    </nav>
+
+    <div id="main1" class="main-content">
+        <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/javaFile/bodyColor.js"></script>
+    <script src="/javaFile/OCnavbar.js"></script>
+    <script src="/javaFile/service.js"></script>
+    <script src="/javaFile/mobilescreenheight.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>
