@@ -1,4 +1,4 @@
-import { ENV_VARS } from './test.js';
+
 // دعم اجهزة الجوال الطويلة
 function screenHeight (v) {
   v
@@ -37,4 +37,3 @@ function screenHeight (v) {
 screenHeight(screen.height)
 
 
-console.log(ENV_VARS.LO_K_SECRET);

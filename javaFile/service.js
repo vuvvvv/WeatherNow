@@ -1,3 +1,4 @@
+
 // دالة لإظهار العناصر
 function showelement () {
   const div1 = document.querySelector('.Weather-muna')
@@ -16,84 +17,144 @@ function hideelement () {
 //#####################################################################################################################
 
 // جلب بيانات الموقع ^!^
-async function showLocation () {
-  if (navigator.geolocation != null) {
-    hideelement()
+function showLocation() {
+  if (navigator.geolocation) {
+    hideelement();
+
     document
       .getElementById('insid-card')
       .insertAdjacentHTML(
         'beforebegin',
         '<div class="loader" id="loader"></div>'
-      )
-    navigator.geolocation.getCurrentPosition(onSuccess)
+      );
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const coords = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          };
+  
+          // تخزين الموقع في Local Storage
+          localStorage.setItem('userLocation', JSON.stringify(coords));
+  
+          console.log('Location saved:', coords);
+        }, error => {
+          console.error('Error fetching location:', error);
+        });
+      } else {
+        console.log('Geolocation not supported by this browser.');
+      }
+
+    // استدعاء الموقع مع دالة نجاح ودالة خطأ
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
   } else {
-    showErrorAnimation()
+    showErrorAnimation();
   }
 }
 
+// دالة الخطأ عند فشل جلب الموقع
+function onError(error) {
+  console.error("Error fetching location:", error.message);
+  showErrorAnimation();
+  removeLoader();
+}
+
+
 // دالة تُنفذ عند نجاح جلب الموقع الجغرافي
-async function onSuccess (position) {
-  let locationApiKey = 'dcbe7133d6764acc9f01b44eec762204'
-  let weatherApiKey = '331c32dd574914f3ea9605314510dac2'
+function onSuccess(position) {
 
-  let { latitude, longitude } = position.coords
+  if (!position || !position.coords) {
+    console.error("Invalid position object:", position);
+    removeLoader();
+    return;
+  }
+  
+  const api_url = "https://api.jsonbin.io/v3/b/675c95ebad19ca34f8daadb3"
+  const api = "$2a$10$gqd8bam5IOPCIuUcLNFdc.QphugZIMiBGlIEy22QZX6bSyooJy9Wa"
+  let locationKey;
+  let weatherKey;
 
-  try {
-    let response = await fetch(
-      `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
-    )
+// استدعاء المفتاح
+fetch(api_url, {
+  headers: {
+    'X-Master-Key': api
+  }
+})
+  .then(response => response.json())
+  .then((data) => {
+     locationKey = data.record.headers[0].locationKey; 
+     weatherKey = data.record.headers[0].weatherKey;
 
-    let data = await response.json()
-    let allDetails = data.results[0].components
-    console.table(allDetails)
+  
+    
+ 
+  
+  
 
-    let { city, suburb } = allDetails
-    document.getElementById('loca-weather').innerText = `${city} - ${suburb}`
+  let locationApiKey = locationKey;
+  let weatherApiKey = weatherKey;
+  let { latitude, longitude } = position.coords;
 
-    if (city != undefined) {
-      showelement()
-      removeLoader()
-    } else {
-      city == undefined
-      hideelement().style.visibility = 'hidden'
-      showErrorAnimation()
-    }
+  // استدعاء API للحصول على الموقع
+  fetch(
+    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      let allDetails = data.results[0].components;
 
-    let apiUrl = 'http://api.openweathermap.org/data/2.5/weather'
-    let responsee = await fetch(
-      `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
-    )
+      let { city, suburb } = allDetails;
+      document.getElementById('loca-weather').innerText = `${city} - ${suburb}`;
+      
 
-    let dataa = await responsee.json()
-    let { main, weather, wind, clouds } = dataa
-    let { temp, humidity } = main
-    let { description } = weather[0]
-    let { speed } = wind
-    let { all } = clouds
-    let main1 = dataa.weather[0].main
+      if (city != undefined) {
+        showelement();
+        removeLoader();
+      } else {
+        hideelement().style.visibility = 'hidden';
+        showErrorAnimation();
+      }
 
-    document.getElementById('state').innerText = `${main1}`
+      let apiUrl = 'http://api.openweathermap.org/data/2.5/weather';
+      return fetch(
+        `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
+      );
+    })
+    .then((responsee) => responsee.json())
+    .then((dataa) => {
+      let { main, weather, wind, clouds } = dataa;
+      let { temp, humidity } = main;
+      let { description } = weather[0];
+      let { speed } = wind;
+      let { all } = clouds;
+      let main1 = dataa.weather[0].main;
 
-    document.getElementById('temp').innerText = `${~~temp}°C`
-    document.getElementById('hum').innerText = `${~~humidity}%`
-    document.getElementById('wind1').innerText = `${~~speed}m/s`
-    document.getElementById('rain1').innerText = `${~~all}%`
+      document.getElementById('state').innerText = `${main1}`;
+      document.getElementById('temp').innerText = `${~~temp}°C`;
+      document.getElementById('hum').innerText = `${~~humidity}%`;
+      document.getElementById('wind1').innerText = `${~~speed}m/s`;
+      document.getElementById('rain1').innerText = `${~~all}%`;
 
-    try {
-      const animations = await lottie.loadAnimation({
+      // تحميل انميشن حالة الطقس
+      return lottie.loadAnimation({
         container: document.getElementById('Lottie'),
-        path: getWetherstate(main1), // انمايشن حالة الطقس
+        path: getWetherstate(main1),
         renderer: 'svg',
         loop: true,
         autoplay: true
-      })
-    } catch (error) {
-      showErrorAnimation()
-    }
-  } catch (error) {
-    showErrorAnimation()
-  }
+      });
+    })
+    .catch((error) => {
+      showErrorAnimation();
+    });
+
+  })
+  .catch(error => {
+    console.error('Error fetching the key:', error);
+  });
 }
+
 
 // دالة لإخفاء مؤشر التحميل في حالة حدوث خطأ ^!^
 function removeLoader () {

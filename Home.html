@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="small-device.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body>
+    
 
     <main class="card">
 
@@ -24,21 +26,22 @@
         </div>
         <div class="in-said-card" id="insid-card">
             <h1 class="loca-weather" id="loca-weather"></h1>
-            <h2 class="temprtcher" id="temp"></h2>
-            <h2 class="weather-state" id="state"></h2>
+            <p class="temprtcher" id="temp"></p>
+            <p class="weather-state" id="state"></p>
+            <p class="time" id="time"></p>
             <div class="loadAnimation" id="Lottie">
                 <script src="javaFile/service.js"></script>
             </div>
         </div>
         <div class="Weather-muna" id="allmuna">
-            <h2 class="wind"> الرياح: <i class="fa fa-wind fa-2.5xs"
-                    style="left: -25px ; position: absolute; top: 5px; "></i></h2>
-            <h2 class="wind1" id="wind1"></h2>
-            <h2 class="humidity"> الرطوبة: <i class="fa fa-hand-holding-droplet"></i></h2>
-            <h2 class="humidity1" id="hum"></h2>
-            <h2 class="rain">السحاب: <i class="fa-solid fa-cloud" style="position: absolute; top: 3px; left:-28px"></i>
-            </h2>
-            <h2 class="rain1" id="rain1"></h2>
+            <p class="wind"> الرياح: <i class="fa fa-wind fa-2.5xs"
+                    style="left: -25px ; position: absolute; top: 5px; "></i></p>
+            <p class="wind1" id="wind1"></p>
+            <p class="humidity"> الرطوبة: <i class="fa fa-hand-holding-droplet"></i></p>
+            <p class="humidity1" id="hum"></p>
+            <p class="rain">السحاب: <i class="fa-solid fa-cloud" style="position: absolute; top: 3px; left:-28px"></i>
+            </p>
+            <p class="rain1" id="rain1"></p>
 
 
         </div>
@@ -62,19 +65,20 @@
 
 
 
+    
+     
 
 
 
 
 
 
-
-
+    
     <script src="/javaFile/bodyColor.js"></script>
     <script src="/javaFile/OCnavbar.js"></script>
-    <script type="module" src="/javaFile/service.js"></script>
+    <script src="/javaFile/service.js"></script>
     <script src="/javaFile/mobilescreenheight.js"></script>
-    <script type="module" src="/javaFile/test.js"></script>
+    
 
 
 

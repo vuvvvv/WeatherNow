@@ -412,6 +412,14 @@
     
 
 }
+.time{
+    position: absolute;
+    top: 200px;
+    left: 160px;
+    font-size: 21px;
+    font-family: 'Scheherazade', serif;
+    justify-self: center;
+}
 
 .card.Weather-muna{
     display: grid;
@@ -659,6 +667,14 @@
     
 
 }
+.time{
+    position: absolute;
+    top: 200px;
+    left: 160px;
+    font-size: 21px;
+    font-family: 'Scheherazade', serif;
+    justify-self: center;
+}
 
 .card.Weather-muna{
     display: flex;
@@ -900,6 +916,14 @@
     justify-self: center;
     
 
+}
+.time{
+    position: absolute;
+    top: 250px;
+    left: 195px;
+    font-size: 21px;
+    font-family: 'Scheherazade', serif;
+    justify-self: center;
 }
 
 .card.Weather-muna{
@@ -1145,6 +1169,14 @@
     
 
 }
+.time{
+    position: absolute;
+    top: 250px;
+    left: 195px;
+    font-size: 21px;
+    font-family: 'Scheherazade', serif;
+    justify-self: center;
+}
 
 .card.Weather-muna{
     display: grid;
@@ -1369,7 +1401,7 @@
     justify-self: center;
     
 }
-
+    
 .temprtcher {
     position: absolute;
     top: 180px;
@@ -1382,12 +1414,20 @@
 .weather-state{
     position: absolute;
     top: 230px;
-    left: 166px;
+    left: 195px;
     font-size: 21px;
     font-family: 'Scheherazade', serif;
     justify-self: center;
     
 
+}
+.time{
+    position: absolute;
+    top: 250px;
+    left: 195px;
+    font-size: 21px;
+    font-family: 'Scheherazade', serif;
+    justify-self: center;
 }
 
 .card.Weather-muna{

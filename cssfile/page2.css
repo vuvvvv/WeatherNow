@@ -1,21 +1,87 @@
 @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
 html, body {
-    margin: 0;
+    margin: 0 ;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 100% ; 
+    height:100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background: rgb(26,38,52);
     background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-    rgb(98, 165, 241) 100%);
+    #62a5f1 100%);
     overflow: hidden;
 
-
 }
 
-.fa-meanpath{
+
+.in-said-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.loadAnimation {
+    position: absolute;
+    top: 40px;
+    margin-left: 125px;
+    justify-self: center;
+    width: 190px;
+    height: 190px;
+}
+
+.loca-weather{
+    position: absolute;
+    top: -3px  ;
+    left: 120px ;
+    font-family: 'Scheherazade', serif;
+    font-weight: 100;
+    font-style: normal;
+    justify-self: center;
+    color: azure;
+   
+    
+}
+
+.temprtcher {
+    position: absolute;
+    top: 188px;
+    margin-left: 195px;
+    font-size: 35px;
+    justify-self: center;
+    font-family: 'Scheherazade', serif;
+    flex:1 0 5rem;
+    
+}
+.imagewe{
+    position: absolute;
+    width: 450px;
+   
+}
+.imagetime{
    justify-self: center;
-    text-justify: inter-word;
+    font-size: 39px;
+    color: azure;    
+
 }
+.loader2 {
+    margin: 0;
+    border: 9px solid #3270ad5e;
+    border-top: 9px solid #62a5f1;
+    width: 430px;
+    height: 430px;
+    border-radius: 100%;
+    animation: spinner 9s linear infinite;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    justify-self: center;
+   
+ }
+ 
+ @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+ }

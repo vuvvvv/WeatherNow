@@ -1,17 +1,12 @@
 {
-  "name": "webweather",
-  "version": "1.0.0",
-  "main": "javaFile/service.js",
-  "type": "module",
-  "scripts": {
-    "start": "node javaFile/service.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "fs": "^0.0.1-security",
+    "jQuery": "^1.7.4",
+    "type": "module",
+    "puppeteer": "^23.10.4"
+    
   }
+
+ 
 }
