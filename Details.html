@@ -13,38 +13,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="small-device.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <title>النشرة الجوية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<title>النشرة الجوية</title>
 </head>
 
 <body>
-    <script src="/javaFile/secvice2.js"></script>
 
 
-        <div class="in-said-card2" id="insid-card2">
-            <h1 class="loca-weather" id="loca-weather2"></h1>
-            
-            <p class="imagetime" id="imagetime"></p>
-            <img class="imagewe" src="./assets/screenshot.png"></img>
-            <p class="temprtcher" id="temp2"></p>
+    <div class="container mt-5">
 
+        <div class="transparent-card">
+            <h5 class="card-title" style="color: black;">توقعات الامطار </h5>
+            <div class="card-body">
+                <p class="imagetime" id="imagetime"></p>
 
-            <div class="loadAnimation" id="Lottie2">
-                <script src="javaFile/secvice2.js"></script>
-                
-
+                <img class="imagewe" src="./assets/screenshot.png"></img>
 
             </div>
         </div>
-
-
-    
+    </div>
 
 
 
+    <nav class="nav-top ">
+        <h1 class="loca-weather" id="loca-weather2"></h1>
+        <p class="description" id="description"></p>
+        <p class="temp_max" id="temp_max"></p>
+        <div class="loadAnimation" id="Lottie2">
+        </div>
+    </nav>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/javaFile/bodyColor.js"></script>
     <script src="/javaFile/txtRead.js"></script>
     <script src="/javaFile/getMap.js"></script>
-    
+    <script src="/javaFile/secvice2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="javaFile/WeatherststIcon.js"></script>
+
 
 </body>
 

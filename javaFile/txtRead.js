@@ -12,4 +12,5 @@ fetch('./txt/text.txt').then(response => {
   .catch(error => {
     console.error(error); // معالجة الأخطاء
   });
-  
+
+

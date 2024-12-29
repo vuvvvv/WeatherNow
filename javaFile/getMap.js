@@ -13,9 +13,7 @@ const main = async () => {
   const textSelector = "#table_element_1";
   const imageElement = await page.$(imageSelector);
   const textElement = await page.$eval(textSelector, element => element.innerText);
-  if(textElement){
-    fs.writeFileSync("../txt/text.txt", textElement);
-  }
+ 
 
   if (imageElement) {
     // التقاط لقطة شاشة للصورة فقط
