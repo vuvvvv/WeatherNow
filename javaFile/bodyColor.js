@@ -37,7 +37,7 @@ function hoursNew () {
 function colorBody () {
   if (hoursNew() == 'NIGHT MODE') {
     document.body.style.background =
-      ' linear-gradient(184deg, rgba(1,22,48,1) 0%, rgba(0,95,175,1) 100%)'
+      'linear-gradient(184deg, rgba(1,22,48,1) 0%, rgba(50,138,212,1) 100%)'
     document.getElementById('cardInner').style.backdropFilter = 'blur(1px)'
     document.getElementById('mySidebar').style.backdropFilter = 'blur(100px)'
   } else {

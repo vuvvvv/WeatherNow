@@ -1,67 +1,126 @@
 @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
 html,
 body {
-  margin: 0 ;
+  margin: 0;
   padding: 0;
-  width: 100% ; 
-  height:100vh;
-  position: fixed;
+  width: 100%;
+  height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(26,38,52);
-  background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-  #62a5f1 100%);
+  background: rgb(26, 38, 52);
+  background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+  font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
   overflow: hidden;
+  scrollbar-width: none;
 }
 
-.transparent-card {
+.transparent-card,
+.transparent-card2,
+.transparent-card3,
+.transparent-card4,
+.transparent-card5 {
   width: 400px;
   height: 400px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
+.transparent-card,
+.transparent-card3,
+.transparent-card4,
+.transparent-card5 {
+  border-radius: 19px;
+  flex-direction: column;
+}
+
+.transparent-card2 {
+  width: 150px;
+}
+.transparent-card3 {
+  border-radius: 19px;
+  direction: rtl;
+  text-align: right;
+  width: 230px;
+  height: 200px;
+}
+.transparent-card4 {
+  height: 180px;
+  width: 240px;
+  margin: 0;
+  padding: 0;
+}
 .container {
   position: fixed;
-  left: 800px;
-
+  left: 450px;
+  top: 100px;
 }
-.card-title{
+.container2 {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+}
+.container3 {
+  position: fixed;
+  left: 200px;
+  top: 100px;
+}
+.container4 {
+  position: fixed;
+  left: 200px;
+  top: 320px;
+}
+.container5 {
+  position: fixed;
+  left: 920px;
+  top: 100px;
+}
+.card-title,
+.card-title2,
+.card-title3,
+.card-title4,
+.card-title5 {
   font-size: 16px;
   margin-top: -3px;
   justify-self: center;
   font-style: initial;
-  
 }
 
 .loadAnimation {
   position: absolute;
   top: 10px;
-  left: 950px;
+  left: 50px;
   justify-self: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60;
+}
+.loadAnimation-error {
+  position: absolute;
+  justify-self: center;
+  width: 500px;
+  height: 500px;
 }
 
 .loca-weather {
   position: absolute;
-  top: 10px;
-  left: 1000px;
-  font-family: "Scheherazade", serif;
-  font-weight: 100;
-  font-style: normal;
-  justify-self: center;
+  top: 20px;
+  left: 1050px;
+  font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+  font-weight: bold; /* سماكة الخط */
+  direction: rtl;
+  text-align: center;
+  font-size: 18px;
   color: rgb(0, 0, 0);
 }
 
 .temp_max {
   position: absolute;
   top: 10px;
-  left: 900px;
+  left: 20px;
   font-size: 20px;
+  font-weight: bold; /* سماكة الخط */
   font-family: "Scheherazade", serif;
   color: rgb(0, 0, 0);
   flex: 1 0 5rem;
@@ -71,43 +130,61 @@ body {
   top: 20px;
   left: 120px;
   font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(0, 0, 0);
+  font-weight: bold; /* سماكة الخط */
+
   flex: 1 0 5rem;
 }
 .imagewe {
-  position: relative;
-  left: calc(50% - 200px);
+  position: absolute;
+  top: 30px;
+  left: -0px;
   justify-content: center;
   justify-items: center;
   width: 400px;
+  border-radius: 7px;
+  opacity: 0.8;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  z-index: 1;
 }
-.imagetime {
-  position: absolute;
-  bottom: 1px;
-  justify-self: center;
-  font-size: 3px;
-  color: rgb(0, 0, 0);
-}
-.loader2 {
-  margin: 0;
-  border: 9px solid #3270ad5e;
-  border-top: 9px solid #62a5f1;
-  width: 430px;
-  height: 430px;
-  border-radius: 100%;
-  animation: spinner 9s linear infinite;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  justify-self: center;
+.imagewe:hover {
+  filter: contrast(90%) brightness(110%) saturate(100%); /* تأثير اللون */
+  transform: scale(1.4); /* تكبير الصورة بنسبة 20% */
+
+  z-index: -1;
 }
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.imagetime {
+  position: absolute;
+  left: 150px;
+  margin: 0px;
+  bottom: 3px;
+  right: center;
+  justify-items: right;
+  justify-content: right;
+  font-size: 2px;
+  font-weight: bold; /* سماكة الخط */
+  direction: rtl;
+  color: rgb(0, 0, 0);
+}
+
+.card-body3 {
+  padding: 60px;
+  align-items: center;
+  direction: rtl;
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  font-weight: bold; /* سماكة الخط */
+}
+.caonter {
+  position: absolute;
+  display: flex;
+  align-items: right;
+  direction: rtl;
+  font-size: 14.5px;
+  font-weight: bold; /* سماكة الخط */
+  color: rgb(0, 0, 0);
 }
