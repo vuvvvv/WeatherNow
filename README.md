@@ -56,9 +56,141 @@
 
 هذا واجهات الموقع 
 
-![](image/صفحةالبدا.JPG)
+![](image/صفحة_البدا.JPG)
+![](image/النشرة_الجوية.JPG)
+![](image/مراجع_للمشروع.JPG)
 
 
 
 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+
+ #### نعم الموقع يدعم اجهزة التابلت و الموبايل  
+
+ ![](image/شاشة_تابلت.JPG)
+ ![](image/شاشة_جوال.JPG)
+
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+
+ تم بناء الموقع بشكل بسيط ومتواضع ليذكرنا بصفحات الويب الجميلة والبسيطة، وفي نفس الوقت يحمل روح الحداثة في التصميم، مما يجمع بين الأصالة والتطور لخلق تجربة مستخدم مريحة وجذابة. ✨💻  
+
+
+
+ 
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ لا تنسونا من دعمكم شكرًا لزيارتك! نتمنى لك تجربة ممتعة! 😊😊😊😊
+ vuvvvv
  
