@@ -1,3 +1,4 @@
+// تحتاج الى بروكسي لي تجاوز المنع للوصول للصفحة
 const proxyUrl = "https://billowing-sun-c1b7.azooz51894.workers.dev/";
 const targetUrl = "https://www.almisnid.com/almisnid/days.php";
 
@@ -20,8 +21,6 @@ fetch(`${proxyUrl}?url=${encodeURIComponent(targetUrl)}`)
 
       // تحديث النص في العنصر الذي لديه id = "caonter"
       document.getElementById("caonter").innerText = text3;
-    } else {
-      console.error("لم يتم العثور على العنصر المحدد.");
-    }
+    } 
   })
-  .catch((error) => console.log("خطأ في الطلب:", error));
+  .catch((error) => error);

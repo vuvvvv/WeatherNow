@@ -1,19 +1,19 @@
 @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
+  height: 100vh; /* تأكد من أن الجسم يغطي كامل الشاشة */
+  position: relative; /* تغيير إلى relative للسماح بالتمرير */
+  display: flex; /* استخدام flexbox لتنسيق العناصر */
+  flex-direction: column; /* يسمح بتكديس العناصر بشكل صحيح */
   align-items: center;
-  justify-content: center;
-  background: rgb(26, 38, 52);
+  justify-content: flex-start; /* لا تجعل كل شيء في المنتصف */
   background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
   font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
-  overflow: hidden;
-  scrollbar-width: none;
+  
 }
 
 .transparent-card,
@@ -27,6 +27,7 @@ body {
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  font-size: clamp(14px, 1.2vw, 24px);
 }
 .transparent-card,
 .transparent-card3,
@@ -54,7 +55,7 @@ body {
 }
 .container {
   position: fixed;
-  left: 450px;
+  left: -250px;
   top: 100px;
 }
 .container2 {
@@ -82,10 +83,24 @@ body {
 .card-title3,
 .card-title4,
 .card-title5 {
-  font-size: 16px;
-  margin-top: -3px;
-  justify-self: center;
-  font-style: initial;
+  font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+  font-weight: bold; /* سماكة الخط */
+  direction: rtl;
+  text-align: center;
+  font-size: clamp(14px, 4vw, 20px);
+}
+.card-body {
+  object-fit: cover;
+}
+.container,
+.container2,
+.container3,
+.container4,
+.container5 {
+  font-size: clamp(14px, 1.2vw, 24px);
+  display: flexbox;
+ 
+  margin-top: 39px;
 }
 
 .loadAnimation {
@@ -97,21 +112,23 @@ body {
   height: 60;
 }
 .loadAnimation-error {
-  position: absolute;
-  justify-self: center;
-  width: 500px;
-  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
 }
 
 .loca-weather {
-  position: absolute;
-  top: 20px;
-  left: 1050px;
+  position: absolute; /* يثبّت العنصر في الشاشة */
+  top: 0; /* يبقى في أعلى الشاشة */
+  right: 0; /* يبقى في يمين الشاشة */
+  padding: 10px;
   font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
   font-weight: bold; /* سماكة الخط */
   direction: rtl;
-  text-align: center;
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 20px);
   color: rgb(0, 0, 0);
 }
 
@@ -119,7 +136,7 @@ body {
   position: absolute;
   top: 10px;
   left: 20px;
-  font-size: 20px;
+  font-size: clamp(14px, 1.5vw, 20px);
   font-weight: bold; /* سماكة الخط */
   font-family: "Scheherazade", serif;
   color: rgb(0, 0, 0);
@@ -127,9 +144,9 @@ body {
 }
 .description {
   position: absolute;
-  top: 20px;
+  top: 24px;
   left: 120px;
-  font-size: 20px;
+  font-size: clamp(14px, 1.5vw, 20px);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(0, 0, 0);
   font-weight: bold; /* سماكة الخط */
@@ -142,16 +159,18 @@ body {
   left: -0px;
   justify-content: center;
   justify-items: center;
-  width: 400px;
+  width: 100%;
+  height: 300px;
   border-radius: 7px;
   opacity: 0.8;
+  object-fit: cover;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   z-index: 1;
 }
 .imagewe:hover {
   filter: contrast(90%) brightness(110%) saturate(100%); /* تأثير اللون */
-  transform: scale(1.4); /* تكبير الصورة بنسبة 20% */
+  transform: scale(1.7); /* تكبير الصورة بنسبة 20% */
 
   z-index: -1;
 }
@@ -164,7 +183,7 @@ body {
   right: center;
   justify-items: right;
   justify-content: right;
-  font-size: 2px;
+  font-size: clamp(14px, 1vw, 24px);
   font-weight: bold; /* سماكة الخط */
   direction: rtl;
   color: rgb(0, 0, 0);
@@ -178,13 +197,1141 @@ body {
   justify-items: center;
   display: flex;
   font-weight: bold; /* سماكة الخط */
+  font-size: clamp(14px, 1.2vw, 24px);
 }
 .caonter {
   position: absolute;
   display: flex;
   align-items: right;
   direction: rtl;
-  font-size: 14.5px;
   font-weight: bold; /* سماكة الخط */
   color: rgb(0, 0, 0);
+}
+.alret {
+  position: absolute;
+  padding-right: 10px;
+  display: flex;
+  direction: rtl;
+  align-items: right;
+  text-align: right;
+  font-size: clamp(14px, 1.2vw, 24px);
+  font-weight: bold; /* سماكة الخط */
+  color: rgb(0, 0, 0);
+}
+.card-body,
+.card-body2,
+.card-body3,
+.card-body4,
+.card-body5 {
+  font-size: clamp(
+    14px,
+    1.2vw,
+    30px
+  ); /* يتحكم في حجم الخط بناءً على حجم الشاشة */
+  display: inline-flexbox;
+}
+
+@media (max-width: 1309px) {
+  .container {
+    left: -310px;
+  }
+  .container2 {
+    left: 7px;
+  }
+  .container3 {
+    left: 170px;
+  }
+  .container4 {
+    left: 165px;
+  }
+  .container5 {
+    left: 850px;
+  }
+}
+@media (max-width: 1240px) {
+  .container5 {
+    left: 820px;
+  }
+}
+
+@media (max-width: 1195px) {
+  .container {
+    left: -140px;
+  }
+  .container5 {
+    left: 810px;
+  }
+}
+@media (max-width: 1150px) {
+  .transparent-card5 {
+    width: 400px;
+    height: 400px;
+  }
+  .container5 {
+    left: 680px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 400px;
+  }
+  .container {
+    left: -280px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+}
+
+@media (max-width: 1026px) {
+  .transparent-card5 {
+    width: 350px;
+    height: 400px;
+  }
+  .container5 {
+    left: 670px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 400px;
+  }
+  .container {
+    left: -280px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .transparent-card5 {
+    width: 310px;
+    height: 400px;
+  }
+  .container5 {
+    left: 660px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 400px;
+  }
+  .container {
+    left: -50px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+}
+@media (max-width: 918px) {
+  .transparent-card5 {
+    width: 280px;
+    height: 400px;
+  }
+  .container5 {
+    left: 630px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: -85px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+}
+
+@media (max-width: 900px) {
+  .transparent-card5 {
+    width: 240px;
+    height: 400px;
+  }
+  .container5 {
+    left: 630px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: -85px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+}
+@media (max-width: 890px) {
+  .transparent-card5 {
+    width: 240px;
+    height: 400px;
+  }
+  .container5 {
+    left: 630px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: -85px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+}
+
+@media (max-width: 852px) {
+  .transparent-card5 {
+    width: 240px;
+    height: 400px;
+  }
+  .container5 {
+    left: 600px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: -110px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 400px;
+  }
+  .transparent-card3 {
+    width: 199px;
+    height: 200px;
+  }
+  .transparent-card4 {
+    width: 205px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 800px) {
+  .transparent-card5 {
+    width: 240px;
+    height: 400px;
+  }
+  .container5 {
+    left: 580px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: -135px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 400px;
+  }
+  .transparent-card3 {
+    width: 199px;
+    height: 200px;
+  }
+  .transparent-card4 {
+    width: 205px;
+    height: 180px;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 150px;
+  }
+  .container4 {
+    left: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .transparent-card5 {
+    width: 240px;
+    height: 400px;
+  }
+  .container5 {
+    left: 570px;
+  }
+  .transparent-card {
+    width: 210px;
+    height: 400px;
+  }
+  .container {
+    left: 40px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    left: 5px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 400px;
+  }
+  .transparent-card3 {
+    width: 199px;
+    height: 200px;
+  }
+  .transparent-card4 {
+    width: 205px;
+    height: 180px;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 150px;
+  }
+  .container4 {
+    left: 150px;
+  }
+}
+
+@media (max-width: 714px) {
+  .transparent-card5 {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 365px;
+    top: 320px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: 86px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 400px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .transparent-card3 {
+    width: 199px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .transparent-card4 {
+    width: 205px;
+    height: 180px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 150px;
+  }
+  .container4 {
+    left: 150px;
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    white-space: normal; /* يسمح للنص بالنزول للسطر التالي */
+    word-wrap: break-word; /* يكسر الكلمات الطويلة */
+    overflow-wrap: break-word; /* يكسر الكلمات الطويلة إذا لزم الأمر */
+  }
+}
+@media (max-width: 575px) {
+  .transparent-card5 {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 347px;
+    top: 310px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: 34px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    font-weight: bold;
+    word-spacing: -0.2em;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 400px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .transparent-card3 {
+    width: 190px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .transparent-card4 {
+    width: 190px;
+    height: 180px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 150px;
+  }
+  .container4 {
+    left: 150px;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    margin-bottom: 20px; /* إضافة مسافة بين الحاويات */
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    white-space: inherit; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 559px) {
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    margin: -4px;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+  .transparent-card5 {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 160px;
+    top: 310px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: -140px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 130px;
+    height: 400px;
+    overflow: visible;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-overflow: ellipsis;
+  }
+  .transparent-card4 {
+    width: 145px;
+    height: 180px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 420px;
+  }
+  .container4 {
+    left: 5px;
+  }
+  .caonter {
+    margin-top: 100%;
+  }
+}
+
+@media (max-width: 548px) {
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    margin: -4px;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+  .transparent-card5 {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 160px;
+    top: 310px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: -130px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 140px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 130px;
+    height: 400px;
+    overflow: visible;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-overflow: ellipsis;
+  }
+  .transparent-card4 {
+    width: 145px;
+    height: 180px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: 5px;
+  }
+  .container3 {
+    left: 410px;
+  }
+  .container4 {
+    left: 5px;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    margin-bottom: 20px; /* إضافة مسافة بين الحاويات */
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: 90px;
+  }
+}
+@media (max-width: 523px) {
+  .transparent-card5 {
+    width: 480px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 5px;
+    top: 410px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: -28px;
+    top: 40px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 190px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 250px;
+    height: 150px;
+    overflow: visible;
+  }
+  .transparent-card4 {
+    width: 190px;
+    height: 150px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: 5px;
+    top: 40px;
+  }
+  .container3 {
+    left: 230px;
+    top: 250px;
+  }
+  .container4 {
+    left: 5px;
+    top: 250px;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    margin-bottom: 20px; /* إضافة مسافة بين الحاويات */
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 486px) {
+  .transparent-card5 {
+    width: 480px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 5px;
+    top: 410px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: 10px;
+    top: 40px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 190px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 250px;
+    height: 150px;
+    overflow: visible;
+  }
+  .transparent-card4 {
+    width: 190px;
+    height: 150px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: 5px;
+    top: 40px;
+  }
+  .container3 {
+    left: 230px;
+    top: 250px;
+  }
+  .container4 {
+    left: 5px;
+    top: 250px;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    margin-bottom: 20px; /* إضافة مسافة بين الحاويات */
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .transparent-card5 {
+    width: 440px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: 5px;
+    top: 410px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    left: 15px;
+    top: 40px;
+  }
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 190px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 250px;
+    height: 150px;
+    overflow: visible;
+  }
+  .transparent-card4 {
+    width: 190px;
+    height: 150px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: 5px;
+    top: 40px;
+  }
+  .container3 {
+    left: 200px;
+    top: 250px;
+  }
+  .container4 {
+    left: 5px;
+    top: 250px;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    margin-bottom: 20px; /* إضافة مسافة بين الحاويات */
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 442px) {
+  .transparent-card5 {
+    width: 250px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .container5 {
+    left: calc(50% - 125px);
+    top: 150px;
+  }
+  .transparent-card {
+    width: 250px;
+    height: 190px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .container {
+    padding: 20px;
+    text-align: center;
+    right: calc(47% - 125px);
+    top: 740px;
+  }
+
+  .imagetime {
+    white-space: nowrap; /* يمنع النص من النزول إلى سطر جديد */
+    overflow: visible; /* يخفي النص الزائد */
+    text-overflow: ellipsis; /* يظهر "..." عند قص النص */
+    top: 340px;
+  }
+  .card-title5 {
+    overflow: visible; /* يخفي النص الزائد */
+    font-weight: bold;
+    word-spacing: -0.2em;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .transparent-card2 {
+    width: 250px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .transparent-card3 {
+    width: 250px;
+    height: 150px;
+    overflow: visible;
+  }
+  .transparent-card4 {
+    width: 250px;
+    height: 150px;
+    overflow: auto;
+    scrollbar-width: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .container2 {
+    left: calc(50% - 125px);
+    top: 370px;
+  }
+  .container3 {
+    left: calc(50% - 125px);
+    top: 975px;
+  }
+  .container4 {
+    left: calc(50% - 125px);
+    top: 590px;
+  }
+
+  .container,
+  .container2,
+  .container3,
+  .container4,
+  .container5 {
+    font-size: clamp(14px, 1.2vw, 24px);
+    display: flexbox;
+    position: absolute;
+    margin-top: 39px;
+  }
+
+  .card-title,
+  .card-title2,
+  .card-title3,
+  .card-title4,
+  .card-title5 {
+    padding-top: 5px;
+
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .card-body,
+  .card-body2,
+  .card-body3,
+  .card-body4,
+  .card-body5 {
+    margin-top: 9px;
+  }
+  .caonter {
+    margin-top: -30px;
+  }
+
+  html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 150vh; /* تأكد من أن الجسم يغطي كامل الشاشة */
+  position: relative; /* تغيير إلى relative للسماح بالتمرير */
+  display: flex; /* استخدام flexbox لتنسيق العناصر */
+  flex-direction: column; /* يسمح بتكديس العناصر بشكل صحيح */
+  align-items: center;
+  justify-content: flex-start; /* لا تجعل كل شيء في المنتصف */
+  background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+  font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+  overflow-y: auto; /* السماح بالتمرير العمودي */
+  scrollbar-width: none; /* تصغير عرض الشريط */
+  background-attachment: fixed; /* يثبت الخلفية */
+}
 }

@@ -1,4 +1,3 @@
-
 // جلب بيانات الموقع ^!^
 function showLocation() {
   if (navigator.geolocation) {
@@ -21,18 +20,13 @@ function showLocation() {
 
           // تخزين الموقع في Local Storage
           localStorage.setItem("userLocation", JSON.stringify(coords));
-
-          console.log("Location saved:", coords);
         },
         (error) => {
-          console.error("Error fetching location:", error);
+          
         }
       );
-    } else {
-      console.log("Geolocation not supported by this browser.");
     }
 
-    // استدعاء الموقع مع دالة نجاح ودالة خطأ
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   } else {
     showErrorAnimation();
@@ -41,40 +35,23 @@ function showLocation() {
 
 // دالة الخطأ عند فشل جلب الموقع
 function onError(error) {
-  console.error("Error fetching location:", error.message);
+  error.message;
   showErrorAnimation();
   removeLoader();
 }
 
-// دالة تُنفذ عند نجاح جلب الموقع الجغرافي
 function onSuccess(position) {
   if (!position || !position.coords) {
-    console.error("Invalid position object:", position);
     removeLoader();
     return;
   }
 
-  const api_url = "https://api.jsonbin.io/v3/b/675c95ebad19ca34f8daadb3";
-  const api = "$2a$10$gqd8bam5IOPCIuUcLNFdc.QphugZIMiBGlIEy22QZX6bSyooJy9Wa";
-  let locationKey;
-  let weatherKey;
+  
 
-  // استدعاء المفتاح
-  fetch(api_url, {
-    headers: {
-      "X-Master-Key": api,
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      locationKey = data.record.headers[0].locationKey;
-      weatherKey = data.record.headers[0].weatherKey;
-
-      let locationApiKey = locationKey;
-      let weatherApiKey = weatherKey;
+      let locationApiKey = "dcbe7133d6764acc9f01b44eec762204"; // www.opencagedata.com - API للحصول على موقعك بدقه
+      let weatherApiKey = "331c32dd574914f3ea9605314510dac2"; // www.openweathermap.org - API للحصول على معلومات الطقس
       let { latitude, longitude } = position.coords;
 
-      // استدعاء API للحصول على الموقع
       fetch(
         `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
       )
@@ -91,28 +68,27 @@ function onSuccess(position) {
             showelement();
             removeLoader();
           } else {
-            hideelement().style.visibility = "hidden";
             showErrorAnimation();
           }
 
-          let apiUrl = "http://api.openweathermap.org/data/2.5/weather";
+          let apiUrl = "https://api.openweathermap.org/data/2.5/weather";
           return fetch(
             `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
           );
         })
         .then((responsee) => responsee.json())
         .then((dataa) => {
-          let { main,  wind, clouds } = dataa;
+          let { main, wind, clouds } = dataa;
           let { temp, humidity } = main;
           let { speed } = wind;
           let { all } = clouds;
           let main1 = dataa.weather[0].main;
 
-          document.getElementById("state").innerText = `${main1}`;
-          document.getElementById("temp").innerText = `${~~temp}°C`;
-          document.getElementById("hum").innerText = `${~~humidity}%`;
-          document.getElementById("wind1").innerText = `${~~speed}m/s`;
-          document.getElementById("rain1").innerText = `${~~all}%`;
+          document.getElementById("state").innerText = `${geTtrinslate(main1)}`;
+          document.getElementById("temp").innerText = `${~~temp}°`;
+          document.getElementById("hum").innerText = `${~~humidity} %`;
+          document.getElementById("wind1").innerText = `${~~speed * 4} km/h`;
+          document.getElementById("rain1").innerText = `${~~all} %`;
 
           // تحميل انميشن حالة الطقس
           return lottie.loadAnimation({
@@ -124,13 +100,15 @@ function onSuccess(position) {
           });
         })
         .catch((error) => {
+          
           showErrorAnimation();
+         
         });
-    })
-    .catch((error) => {
-      console.error("Error fetching the key:", error);
-    });
+    
 }
+
+onSuccess();
+showLocation();
 
 // دالة لإخفاء مؤشر التحميل في حالة حدوث خطأ ^!^
 function removeLoader() {
@@ -140,13 +118,12 @@ function removeLoader() {
   }
 }
 
-onSuccess();
-showLocation();
-
 // دالة لإظهار العناصر
 function showelement() {
   const div1 = document.querySelector(".Weather-muna");
   const div2 = document.querySelector(".in-said-card");
+  const div3 = document.querySelector(".loca-weather");
+  div3.style.visibility = "visible";
   div1.style.visibility = "visible";
   div2.style.visibility = "visible";
 }
@@ -155,10 +132,13 @@ function showelement() {
 function hideelement() {
   const div1 = document.querySelector(".Weather-muna");
   const div2 = document.querySelector(".in-said-card");
+  const div3 = document.querySelector(".loca-weather");
+  div3.style.visibility = "hidden";
   div1.style.visibility = "hidden";
   div2.style.visibility = "hidden";
 }
 
+// عرض انميشن الخطاء
 function showErrorAnimation() {
   hideelement();
   lottie.loadAnimation({
@@ -172,4 +152,61 @@ function showErrorAnimation() {
   removeLoader();
   document.getElementById("Lottie").style.visibility = "visible";
   document.getElementById("Lottie").style.marginTop = "50px";
+}
+
+
+function geTtrinslate(mains) {
+  const weatherStates = {
+    "Clouds": "غائم",
+    "Tornado": "إعصار",
+    "Rain": "ماطر",
+    "Squall": "عاصفة مفاجئة",
+    "Ash": "رماد",
+    "Sand": "رمل",
+    "Mist": "ضباب خفيف",
+    "Smoke": "دخان",
+    "Haze": "ضباب خفيف",
+    "Snow": "ثلج",
+    "Fog": " ضباب كثيف",
+    "Sand": "رمل",
+    "Drizzle": "رذاذ",
+    "Moderate rain": "مطر معتدل",
+    "Heavy intensity rain":"مطر غزير",
+    "Very heavy rain":"مطر غزير جدًا",
+    "Extreme rain":"مطر شديد جدًا",
+    "Freezing rain":"مطر مجمد",
+    "Light intensity shower rain":"زخات مطر خفيفة",
+    "Shower rain":"زخات مطر",
+    "Heavy intensity shower rain":"زخات مطر غزيرة",
+    "Ragged shower rain":"زخات مطر خفيفة",
+    "Light intensity drizzle":"رذاذ خفيف",
+    "Heavy intensity drizzle":"رذاذ غزير",
+    "Light intensity drizzle rain":"مطر رذاذ خفيف",
+    "Drizzle rain":"مطر رذاذ",
+    "Heavy intensity drizzle rain":"مطر رذاذ غزير",
+    "Shower rain and drizzle":"زخات مطر ورذاذ",
+    "Heavy shower rain and drizzle":"زخات مطر ورذاذ غزيرة",
+    "Shower drizzle":"زخات رذاذ",
+    "Thunderstorm":"عاصفة رعدية",
+    "Thunderstorm with light rain":"عاصفة رعدية مع مطر خفيف",
+    "Thunderstorm with rain":"عاصفة رعدية مع مطر",
+    "Thunderstorm with heavy rain":"عاصفة رعدية مع مطر غزير",
+    "Light thunderstorm":"عاصفة رعدية خفيفة",
+    "Heavy thunderstorm":"عاصفة رعدية غزيرة",
+    "Ragged thunderstorm":"عاصفة رعدية خفيفة",
+    "Thunderstorm with light drizzle":"عاصفة رعدية مع رذاذ خفيف",
+    "Thunderstorm with drizzle":"عاصفة رعدية مع رذاذ",
+    "Thunderstorm with heavy drizzle":"عاصفة رعدية مع رذاذ غزير",
+    "clear sky": "سماء صافية",
+    "few clouds":"سحب قليلة",     
+    "scattered clouds":"سحب متزايد",
+    "broken clouds":"سحب متقطعة",
+    "shower rain":"زخات مطر",
+    "rain":"مطر",
+    "thunderstorm":"عاصفة رعدية",
+    "snow":"ثلج",
+    "mist":"ضباب",
+
+  };
+  return weatherStates[mains] || "صافية";
 }

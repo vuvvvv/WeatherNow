@@ -1,546 +1,24 @@
 @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
 
-/*  mobile */
+/*  mobile */ /*وقفت هنا */
 @media (max-width: 375px) {
-
-  
-    
-    
-        body, html {
-            margin: 0 ;
-            padding: 0;
-            width: 100%; 
-            height:100vh;
-            display: flex ;
-            align-items: center;
-            justify-content: center;
-            background: rgb(26,38,52);
-            background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-            #62a5f1 100%);
-            overflow: hidden;
-            
-            
-    
-            
-         
-        
-        
-        }
-    
-    
-    
-    
-    
-    .sidebar {
-        height: calc(100vh - 0px);
-        width: 200px;
-        position: fixed ;
-        top: top;
-        left: -250px;
-        flex-direction: auto;
-        grid-template-columns: auto;
-        background-color: inherit;
-        padding-top: 3px;
-        transition: 0.2s;
-        color: black;
-       
-        
-    }
-    
-    .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 23px ;
-        color: black;
-        display: block;
-        
-       
-    }
-    
-    .sidebar a:hover {
-        background-color: inherit;
-        
-       
-    }
-    
-    .openbtn {
-        position: absolute;
-        top: 35px;
-        font-size: calc(7vh - 20px );
-        cursor: pointer;
-        background-color: inherit;
-        color: rgb(0, 0, 0);
-        border: 10px;
-        
-        
-    
-    }
-    
-    .main-content {
-        transform: translateY(-280px);
-        position: absolute;
-        left: 1px;
-        padding: 16px;
-       
-    }
-    
-    .card {
-        
-        width: 300px ;
-        height: 300px ;
-        transition: all 0.2s;
-        position: fixed;
-        align-items: center;
-        justify-items: center;
-        cursor: pointer;
-        
-        
-        
-                             
-                             
-    
-    
-    }
-    
-    .card-inner {
-        width: inherit;
-        height: inherit;
-        background: rgba(255,255,255,.05);
-        box-shadow: 0 0 100px rgba(0,0,0,0.25);
-        backdrop-filter: blur(10px);
-        border-radius: 5px;
-        
-       
-    }
-    
-    .card.in-said-card {
-        display: grid;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .loadAnimation {
-        position: absolute;
-        top: 40px;
-        margin-left: 125px;
-        justify-self: center;
-        width: 190px;
-        height: 190px;
-    }
-    
-    .loca-weather{
-        position: absolute;
-        top: -30px;
-        left: 120px;
-        font-family: 'Scheherazade', serif;
-        font-weight: 100;
-        font-style: normal;
-        justify-self: center;
-        
-    }
-    
-    .temprtcher {
-        position: absolute;
-        top: 180px;
-        margin-left: 195px;
-        font-size: 35px;
-        justify-self: center;
-        font-family: 'Scheherazade', serif;
-        
-    }
-    .weather-state{
-        position: absolute;
-        top: 230px;
-        margin-left: 189px;
-        font-size: 21px;
-        font-family: 'Scheherazade', serif;
-        justify-self: center;
-        
-    
-    }
-    
-    .card.Weather-muna{
-        display: grid;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-items: center;
-        
-        
-    
-    
-    }
-    .humidity {
-        position: absolute;
-        top: 320px;
-        left: 350px;
-        font-size: 19px;
-        justify-self: right;
-        font-family: 'Scheherazade', serif;
-        direction: rtl;
-      
-    
-    
-    }
-    
-    .humidity1 {
-        position: absolute;
-        top: 350px;
-        left: 360px;
-        font-size: 19px;
-        justify-self: right;
-        font-family: 'Scheherazade', serif;
-      
-     
-    }
-    
-    .wind {
-        position: absolute;
-        top: 318px;
-        left: 220px;
-        font-size: 19px;
-        justify-self: center;
-        font-family: 'Scheherazade', serif;
-        direction: rtl;
-    }
-    .wind1 {
-        position: absolute;
-        top: 350px;
-        left: 200px;
-        font-size: 19px;
-        justify-self: center;
-        font-family: 'Scheherazade', serif;
-        
-    }
-    .rain{
-        position: absolute;
-        top: 318px;
-        left: 45px;
-        font-size: 19px;
-        justify-self: left;
-        font-family: 'Scheherazade', serif;
-        direction: rtl;
-        
-    }
-    .rain1{
-        position: absolute;
-        top: 350px;
-        left: 60px;
-        font-size: 19px;
-        justify-self: left;
-        font-family: 'Scheherazade', serif;
-    }
-    
-    .loader {
-        margin: 0;
-        border: 9px solid #3270ad5e;
-        border-top: 9px solid #62a5f1;
-        width: 330px;
-        height: 330px;
-        border-radius: 100%;
-        animation: spinner 9s linear infinite;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        justify-self: center;
-       
-     }
-     
-     @keyframes spinner {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-     }
-    
-} 
-/* mobile and tiblet */
-@media (min-width: 376px) and(max-width: 767px)    {
-    
-    
-    body, html {
-        margin: 0 ;
-        padding: 0;
-        position: relative;
-        width: 100%; 
-        height:100vh;
-        display: flex ;
-        align-items: center;
-        justify-content: center;
-        background: rgb(26,38,52);
-        background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-        #62a5f1 100%);
-        overflow: hidden;
-        
-
-        
-     
-    
-    
-    }
-
-
-
-
-
-.sidebar {
-    height: calc(100vh - 0px);
-    width: 250px;
-    position: fixed ;
-    top: top;
-    left: -250px;
-    flex-direction: auto;
-    grid-template-columns: auto;
-    background-color: inherit;
-    padding-top: 3px;
-    transition: 0.2s;
-    color: black;
-   
-    
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: x-large;
-    color: black;
-    display: block;
-    
-   
-}
-
-.sidebar a:hover {
-    background-color: inherit;
-    
-   
-}
-
-.openbtn {
-    position: relative;
-    filter: drop-shadow(0 0 0.99rem #62a5f1);
-    top: 40px ;
-    font-size: calc(5vh - 20px );
-    cursor: pointer;
-    background-color: inherit;
-    color: rgb(0, 0, 0);
-    border: 10px;
-    
-    
-
-}
-
-.main-content {
-    transform: translateY(-280px);
-    position: absolute;
-    left: 1px;
-    padding: 16px;
-   
-}
-
-.card {
-    
-    width: 300px ;
-    height: 300px ;
-    transition: all 0.2s;
-    position: fixed;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-    
-    
-    
-                         
-                         
-
-
-}
-
-.card-inner {
-    width: inherit;
-    height: inherit;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 100px rgba(0,0,0,0.25);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
-    
-   
-}
-
-.card.in-said-card {
-    display: grid;
-    flex-wrap: wrap;
-    align-items: center;
+  body,
+  html {
+    margin: 0;
     padding: 0;
-    margin: 0;
-}
+    width: 100%;
+    height: 100vh;
+    position: fixed;
 
-.loadAnimation {
-    position: absolute;
-    top: 40px;
-    margin-left: 125px;
-    justify-self: center;
-    width: 190px;
-    height: 190px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
 
-.loca-weather{
-    position: absolute;
-    top: -30px;
-    left: 120px;
-    font-family: 'Scheherazade', serif;
-    font-weight: 100;
-    font-style: normal;
-    justify-self: center;
-    
-}
-
-.temprtcher {
-    position: absolute;
-    top: 180px;
-    margin-left: 195px;
-    font-size: 35px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.weather-state{
-    position: absolute;
-    top: 230px;
-    margin-left: 189px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-    
-
-}
-.time{
-    position: absolute;
-    top: 200px;
-    left: 160px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-}
-
-.card.Weather-muna{
-    display: grid;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-items: center;
-    
-    
-
-
-}
-.humidity {
-    position: absolute;
-    top: 320px;
-    left: 350px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-    direction: rtl;
-  
-
-
-}
-
-.humidity1 {
-    position: absolute;
-    top: 350px;
-    left: 360px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-  
- 
-}
-
-.wind {
-    position: absolute;
-    top: 318px;
-    left: 220px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    direction: rtl;
-}
-.wind1 {
-    position: absolute;
-    top: 350px;
-    left: 200px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.rain{
-    position: absolute;
-    top: 318px;
-    left: 45px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-    direction: rtl;
-    
-}
-.rain1{
-    position: absolute;
-    top: 350px;
-    left: 60px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-}
-
-.loader {
-    margin: 0;
-    border: 9px solid #3270ad5e;
-    border-top: 9px solid #62a5f1;
-    width: 330px;
-    height: 330px;
-    border-radius: 100%;
-    animation: spinner 9s linear infinite;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    justify-self: center;
-   
- }
- 
- @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
- }
-}  
-/* tablet جوالي*/ 
-@media (max-width: 768px) {
-    
-
-    body, html {
-        margin: 0 ;
-        padding: 0;
-        width: 100% ; 
-        height:100vh;
-        display: flex;
-        box-decoration-break: clone;
-        align-items: center;
-        justify-content: center;
-        background: rgb(26,38,52);
-        background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-        #62a5f1 100%);
-        overflow: hidden;
-
-        
-     
-    
-    
-    }
-
-
-
-
-
-.sidebar {
+  .sidebar {
     height: calc(100vh - 0px);
     width: 250px;
     position: fixed;
@@ -550,208 +28,181 @@
     background-color: inherit;
     padding-top: 20px;
     transition: 0.2s;
-    color: black;
-   
-    
-}
+    color: rgb(0, 0, 0);
+  }
 
-.sidebar a {
+  .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
-    font-size: xx-large;
-    filter: drop-shadow(0 0 0.99rem #62a5f1);
+    font-size: calc(7vh - 25px);
+    font-weight: bold;
     color: black;
     display: block;
-   
-}
+  }
 
-.sidebar a:hover {
+  .sidebar a:hover {
     background-color: inherit;
-   
-}
+  }
 
-.openbtn {
-    font-size: calc(8vh - 20px);
-    cursor: pointer;
-    position: relative;
+  .openbtn {
+    font-size: calc(7vh - 20px);
+    position: absolute;
+    top: 0px;
     filter: drop-shadow(0 0 0.99rem #62a5f1);
-    top: -100px;
+    cursor: pointer;
     background-color: inherit;
     color: rgb(0, 0, 0);
     border: 10px;
-    
-    
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-
-
-.main-content {
+  .main-content {
     transform: translateY(-280px);
     position: absolute;
     left: 1px;
     padding: 16px;
-}
+  }
 
-.card {
+  .card {
     width: 350px;
     height: 350px;
     transition: all 0.2s;
-    position:  relative;
-    top: calc(-10vh - 20px) ;
-    flex: top;
-    cursor: pointer;
-    justify-self: center;
-    
-                         
-                         
+    position: relative;
+    display: grid;
+    transform: translateY(-80px);
+  }
 
-
-}
-
-.card-inner {
+  .card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 100px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 5px;
-   
-}
+  }
 
-.card.in-said-card {
+  .in-said-card {
     display: grid;
-    flex-wrap: wrap;
-    align-items: center;
+    position: relative;
     padding: 0;
     margin: 0;
-}
+  }
 
-.loadAnimation {
-    position: absolute;
-    top: 20px;
-    margin-left: 100px;
-    justify-self: center;
+  .loadAnimation {
+    position: inherit;
+    top: -390px;
+    left: -0px;
     width: 150px;
     height: 150px;
-}
+  }
 
-.loca-weather{
-    position: absolute;
-    top: -20px;
-    left: 95px;
-    font-family: 'Scheherazade', serif;
-    font-weight: 0;
-    font-size: 25px;
-    font-style: normal;
-    justify-self: center;
-    
-    
-}
-
-.temprtcher {
-    position: absolute;
-    top: 150px;
-    margin-left: 150px;
-    font-size: 30px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.weather-state{
-    position: absolute;
-    top: 185px;
-    margin-left: 150px;
-    font-size: 20px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-    
-
-}
-.time{
-    position: absolute;
-    top: 200px;
-    left: 160px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-}
-
-.card.Weather-muna{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-items: center;
-    
-    
-
-
-}
-.humidity {
-    position: absolute;
-    top: 230px;
-    left: 270px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
+  .loca-weather {
+    position: inherit;
+    top: -360px;
+    left: 9px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-  
+    text-align: center;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+  }
 
+  .temprtcher {
+    font-size: 19px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    position: inherit;
+    top: -210px;
+    left: -90px;
+  }
+  .weather-state {
+    position: inherit;
+    top: -200px;
+    left: -90px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-
-.humidity1 {
+  .Weather-muna {
+    display: row;
+  }
+  .humidity {
     position: absolute;
     top: 250px;
-    left: 290px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-  
- 
-}
+    left: 260px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.wind {
+  .humidity1 {
     position: absolute;
-    top: 227px;
+    top: 270px;
+    left: 280px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .wind {
+    position: absolute;
+    top: 250px;
     left: 170px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-}
-.wind1 {
+    text-align: center;
+  }
+  .wind1 {
     position: absolute;
-    top: 250px;
+    top: 270px;
     left: 160px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.rain{
-    position: absolute;
-    top: 230px;
-    left: 45px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-    
-}
-.rain1{
+    text-align: center;
+  }
+  .rain {
     position: absolute;
-    top: 250px;
-    left: 50px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-}
+    top: 252px;
+    left: 49px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.loader {
+  .rain1 {
+    position: absolute;
+    top: 270px;
+    left: 60px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .loader {
     margin: 0;
     border: 9px solid #3270ad5e;
     border-top: 9px solid #62a5f1;
-    filter: drop-shadow(0 0 0.99rem #62a5f1);
     width: 330px;
     height: 330px;
     border-radius: 100%;
@@ -760,42 +211,480 @@
     left: 0px;
     top: 0px;
     justify-self: center;
-   
- }
- 
- @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
- }
-}
-/* tablet and laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
-    
+  }
 
-    body, html {
-        margin: 0 ;
-        padding: 0;
-        width: 100% ; 
-        height:100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgb(26,38,52);
-        background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-        #62a5f1 100%);
-        overflow: hidden;
-
-        
-     
-    
-    
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
     }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+/* mobile and tiblet */
+@media (min-width: 376px) and(max-width: 767px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
 
+  .sidebar {
+    height: calc(100vh - 0px);
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    flex-direction: auto;
+    background-color: inherit;
+    padding-top: 20px;
+    transition: 0.2s;
+    color: rgb(0, 0, 0);
+  }
 
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: calc(7vh - 25px);
+    font-weight: bold;
+    color: black;
+    display: block;
+  }
 
+  .sidebar a:hover {
+    background-color: inherit;
+  }
 
-.sidebar {
+  .openbtn {
+    font-size: calc(7vh - 20px);
+    position: absolute;
+    top: 0px;
+    filter: drop-shadow(0 0 0.99rem #62a5f1);
+    cursor: pointer;
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    border: 10px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .main-content {
+    transform: translateY(-280px);
+    position: absolute;
+    left: 1px;
+    padding: 16px;
+  }
+
+  .card {
+    width: 350px;
+    height: 350px;
+    transition: all 0.2s;
+    position: relative;
+    display: grid;
+    transform: translateY(-80px);
+  }
+
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+  }
+
+  .in-said-card {
+    display: grid;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .loadAnimation {
+    position: inherit;
+    top: -390px;
+    left: -0px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .loca-weather {
+    position: inherit;
+    top: -360px;
+    left: 9px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+  }
+
+  .temprtcher {
+    font-size: 19px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    position: inherit;
+    top: -210px;
+    left: -90px;
+  }
+  .weather-state {
+    position: inherit;
+    top: -200px;
+    left: -90px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .Weather-muna {
+    display: row;
+  }
+  .humidity {
+    position: absolute;
+    top: 250px;
+    left: 260px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .humidity1 {
+    position: absolute;
+    top: 270px;
+    left: 280px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .wind {
+    position: absolute;
+    top: 250px;
+    left: 170px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+  .wind1 {
+    position: absolute;
+    top: 270px;
+    left: 160px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+  .rain {
+    position: absolute;
+    top: 250px;
+    left: 49px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rain1 {
+    position: absolute;
+    top: 270px;
+    left: 60px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .loader {
+    margin: 0;
+    border: 9px solid #3270ad5e;
+    border-top: 9px solid #62a5f1;
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+    animation: spinner 9s linear infinite;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    justify-self: center;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+/* tablet جوالي*/
+@media (max-width: 768px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
+
+  .sidebar {
+    height: calc(100vh - 0px);
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    flex-direction: auto;
+    background-color: inherit;
+    padding-top: 20px;
+    transition: 0.2s;
+    color: rgb(0, 0, 0);
+  }
+
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: calc(7vh - 25px);
+    font-weight: bold;
+    color: black;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    background-color: inherit;
+  }
+
+  .openbtn {
+    font-size: calc(7vh - 20px);
+    position: absolute;
+    top: 0px;
+    filter: drop-shadow(0 0 0.99rem #62a5f1);
+    cursor: pointer;
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    border: 10px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .main-content {
+    transform: translateY(-280px);
+    position: absolute;
+    left: 1px;
+    padding: 16px;
+  }
+
+  .card {
+    width: 350px;
+    height: 350px;
+    transition: all 0.2s;
+    position: relative;
+    display: grid;
+    transform: translateY(-80px);
+  }
+
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+  }
+
+  .in-said-card {
+    display: grid;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .loadAnimation {
+    position: inherit;
+    top: -390px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .loca-weather {
+    position: inherit;
+    top: -360px;
+    left: 3px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+  }
+
+  .temprtcher {
+    font-size: 19px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    position: inherit;
+    top: -210px;
+    left: 0px;
+  }
+  .weather-state {
+    position: inherit;
+    top: -200px;
+    left: 0px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .Weather-muna {
+    display: flow-root;
+  }
+  .humidity {
+    position: absolute;
+    top: 250px;
+    left: 260px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .humidity1 {
+    position: absolute;
+    top: 270px;
+    left: 280px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .wind {
+    position: absolute;
+    top: 250px;
+    left: 170px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+  .wind1 {
+    position: absolute;
+    top: 270px;
+    left: 160px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+  .rain {
+    position: absolute;
+    top: 252px;
+    left: 49px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rain1 {
+    position: absolute;
+    top: 270px;
+    left: 60px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .loader {
+    margin: 0;
+    border: 9px solid #3270ad5e;
+    border-top: 9px solid #62a5f1;
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+    animation: spinner 9s linear infinite;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    justify-self: center;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+/* tablet and laptop */ /*done*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
+
+  .sidebar {
     height: calc(100vh - 0px);
     width: 250px;
     position: fixed;
@@ -806,198 +695,173 @@
     padding-top: 20px;
     transition: 0.2s;
     color: black;
-   
-    
-}
+  }
 
-.sidebar a {
+  .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block;
-   
-}
+  }
 
-.sidebar a:hover {
+  .sidebar a:hover {
     background-color: inherit;
-   
-}
+  }
 
-.openbtn {
+  .openbtn {
     font-size: calc(8vh - 20px);
-    position: relative;
+    position: absolute;
     top: 25px;
     filter: drop-shadow(0 0 0.99rem #62a5f1);
     cursor: pointer;
     background-color: inherit;
     color: rgb(0, 0, 0);
     border: 10px;
-    
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-
-.main-content {
+  .main-content {
     transform: translateY(-280px);
     position: absolute;
     left: 1px;
     padding: 16px;
-}
+  }
 
-.card {
+  .card {
     width: 450px;
     height: 450px;
     transition: all 0.2s;
-    position: fixed;
-    cursor: pointer;
-    justify-self: center;
-    
-                         
-                         
+    position: relative;
+    display: grid;
+  }
 
-
-}
-
-.card-inner {
+  .card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 100px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 5px;
-   
-}
+  }
 
-.card.in-said-card {
+  .in-said-card {
+    position: relative;
     display: grid;
-    flex-wrap: wrap;
-    align-items: center;
+    position: relative;
     padding: 0;
     margin: 0;
-}
+  }
 
-.loadAnimation {
-    position: absolute;
-    top: 40px;
-    margin-left: 120px;
-    justify-self: center;
+  .loadAnimation {
+    position: inherit;
+    top: -470px;
+    left: 130px;
     width: 190px;
     height: 190px;
-}
+  }
 
-.loca-weather{
-    position: absolute;
-    top: -30px ;
-    transform: translateX(115px);
-    font-family: 'Scheherazade', serif;
-    font-size: xx-large;
-    font-style: normal;
-    align-items: center;
-    justify-content: center;
-    
-    
-}
+  .loca-weather {
+    transform: translateY(-450px);
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+  }
 
-.temprtcher {
-    position: absolute;
-    top: 190px;
-    left:  190px;
-    font-size: 35px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.weather-state{
-    position: absolute;
-    top: 235px;
-    left: 190px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-    
+  .temprtcher {
+    font-size: 15px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    transform: translateY(-240px);
+  }
+  .weather-state {
+    transform: translateY(-235px);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-.time{
-    position: absolute;
-    top: 250px;
-    left: 195px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-}
-
-.card.Weather-muna{
+  .card.Weather-muna {
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;
     justify-items: center;
-    
-    
-
-
-}
-.humidity {
+  }
+  .humidity {
     position: absolute;
     top: 320px;
-    left: 350px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
+    left: 360px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-  
+    text-align: center;
+  }
 
-
-}
-
-.humidity1 {
+  .humidity1 {
     position: absolute;
     top: 350px;
     left: 360px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-  
- 
-}
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.wind {
+  .wind {
     position: absolute;
     top: 318px;
     left: 220px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-}
-.wind1 {
+    text-align: center;
+  }
+  .wind1 {
     position: absolute;
     top: 350px;
     left: 200px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.rain{
-    position: absolute;
-    top: 318px;
-    left: 45px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-    
-}
-.rain1{
+    text-align: center;
+  }
+  .rain {
+    position: absolute;
+    top: 320px;
+    left: 45px;
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rain1 {
     position: absolute;
     top: 350px;
     left: 60px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-}
+    font-size: 12px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.loader {
+  .loader {
     margin: 0;
     border: 9px solid #3270ad5e;
     border-top: 9px solid #62a5f1;
@@ -1009,42 +873,36 @@
     left: 0px;
     top: 0px;
     justify-self: center;
-   
- }
- 
- @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
- }
-} 
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
 /* laptop */
 @media (min-width: 1025px) and (max-width: 1280px) {
-    
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
 
-    body, html {
-        margin: 0 ;
-        padding: 0;
-        width: 100% ; 
-        height:100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgb(26,38,52);
-        background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-        #62a5f1 100%);
-        overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
 
-        
-     
-    
-    
-    }
-
-
-
-
-
-.sidebar {
+  .sidebar {
     height: calc(100vh - 0px);
     width: 250px;
     position: fixed;
@@ -1055,202 +913,174 @@
     padding-top: 20px;
     transition: 0.2s;
     color: black;
-   
-    
-}
+  }
 
-.sidebar a {
+  .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block;
-   
-}
+  }
 
-.sidebar a:hover {
+  .sidebar a:hover {
     background-color: inherit;
-   
-}
+  }
 
-.openbtn {
-    top: 35px  ;
+  .openbtn {
     font-size: calc(8vh - 20px);
-    position: relative;
+    position: absolute;
+    top: 25px;
     filter: drop-shadow(0 0 0.99rem #62a5f1);
     cursor: pointer;
     background-color: inherit;
     color: rgb(0, 0, 0);
     border: 10px;
-    
-    
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-weight: bold;
+  }
 
-}
-
-.main-content {
+  .main-content {
     transform: translateY(-280px);
     position: absolute;
     left: 1px;
     padding: 16px;
-}
+  }
 
-.card {
+  .card {
     width: 450px;
     height: 450px;
     transition: all 0.2s;
-    position: fixed;
-    cursor: pointer;
-    justify-self: center;
-    
-    
-                         
-                         
+    position: relative;
+    display: grid;
+  }
 
-
-}
-
-.card-inner {
+  .card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 100px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 5px;
-   
-}
+  }
 
-.card.in-said-card {
+  .in-said-card {
+    position: relative;
     display: grid;
-    flex-wrap: wrap;
-    align-items: center;
+    position: relative;
     padding: 0;
     margin: 0;
-}
+  }
 
-.loadAnimation {
-    position: absolute;
-    top: 40px;
-    margin-left: 125px;
-    justify-self: center;
+  .loadAnimation {
+    position: inherit;
+    top: -470px;
+    left: 130px;
     width: 190px;
     height: 190px;
-}
+  }
 
-.loca-weather{
-    position: absolute;
-    top: -30px  ;
-    left: 120px ;
-    font-family: 'Scheherazade', serif;
-    font-weight: 100;
-    font-style: normal;
-    justify-self: center;
-   
-    
-}
+  .loca-weather {
+    transform: translateY(-450px);
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+  }
 
-.temprtcher {
-    position: absolute;
-    top: 188px;
-    margin-left: 195px;
-    font-size: 35px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    flex:1 0 5rem;
-    
-}
-.weather-state{
-    position: absolute;
-    top: 235px;
-    left: 194px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-    
-    
+  .temprtcher {
+    font-size: 15px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    transform: translateY(-240px);
+  }
+  .weather-state {
+    transform: translateY(-235px);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-.time{
-    position: absolute;
-    top: 250px;
-    left: 195px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-}
-
-.card.Weather-muna{
+  .card.Weather-muna {
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;
     justify-items: center;
-    flex:1 0 5rem;
-    
-
-
-}
-.humidity {
+  }
+  .humidity {
     position: absolute;
     top: 320px;
-    left: 350px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
+    left: 360px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-    flex:1 0 5rem;
-  
+    text-align: center;
+  }
 
-
-}
-
-.humidity1 {
+  .humidity1 {
     position: absolute;
     top: 350px;
     left: 360px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-  
- 
-}
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.wind {
+  .wind {
     position: absolute;
     top: 318px;
     left: 220px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-}
-.wind1 {
+    text-align: center;
+  }
+  .wind1 {
     position: absolute;
     top: 350px;
     left: 200px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.rain{
-    position: absolute;
-    top: 318px;
-    left: 45px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-    
-}
-.rain1{
+    text-align: center;
+  }
+  .rain {
+    position: absolute;
+    top: 320px;
+    left: 45px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rain1 {
     position: absolute;
     top: 350px;
     left: 60px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-}
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.loader {
+  .loader {
     margin: 0;
     border: 9px solid #3270ad5e;
     border-top: 9px solid #62a5f1;
@@ -1262,44 +1092,36 @@
     left: 0px;
     top: 0px;
     justify-self: center;
-   
- }
- 
- @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
- }
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 /* laptop and desktop */
-@media (min-width: 1281px)  {
-    
+@media (min-width: 1281px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
 
-    body, html {
-        margin: 0 ;
-        padding: 0;
-        width: 100% ; 
-        height:100vh;
-        position: fixed;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgb(26,38,52);
-        background: linear-gradient(0deg, rgb(45, 91, 183) 0%,
-        #62a5f1 100%);
-        overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 38, 52);
+    background: linear-gradient(0deg, rgb(45, 91, 183) 0%, #62a5f1 100%);
+    overflow: hidden;
+  }
 
-        
-     
-    
-    
-    }
-
-
-
-
-
-.sidebar {
+  .sidebar {
     height: calc(100vh - 0px);
     width: 250px;
     position: fixed;
@@ -1310,198 +1132,173 @@
     padding-top: 20px;
     transition: 0.2s;
     color: black;
-   
-    
-}
+  }
 
-.sidebar a {
+  .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block;
-   
-}
+  }
 
-.sidebar a:hover {
+  .sidebar a:hover {
     background-color: inherit;
-   
-}
+  }
 
-.openbtn {
+  .openbtn {
     font-size: calc(8vh - 20px);
     position: absolute;
-    top: 25px ;
+    top: 25px;
     filter: drop-shadow(0 0 0.99rem #62a5f1);
     cursor: pointer;
     background-color: inherit;
     color: rgb(0, 0, 0);
     border: 10px;
-    
-    
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-}
-
-.main-content {
+  .main-content {
     transform: translateY(-280px);
     position: absolute;
     left: 1px;
     padding: 16px;
-}
+  }
 
-.card {
+  .card {
     width: 450px;
     height: 450px;
     transition: all 0.2s;
-    position: fixed;
-    cursor: pointer;
-    justify-self: center;
-   
-    
-                         
-                         
+    position: relative;
+    display: grid;
+  }
 
-
-}
-
-.card-inner {
+  .card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 100px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 5px;
-   
-}
+  }
 
-.card.in-said-card {
+  .in-said-card {
+    position: relative;
     display: grid;
-    flex-wrap: wrap;
-    align-items: center;
+    position: relative;
     padding: 0;
     margin: 0;
-}
+  }
 
-.loadAnimation {
-    position: absolute;
-    top: 40px;
-    margin-left: 125px;
-    justify-self: center;
+  .loadAnimation {
+    position: inherit;
+    top: -470px;
+    left: 130px;
     width: 190px;
     height: 190px;
-}
+  }
 
-.loca-weather{
-    position: absolute;
-    top: -30px;
-    left: 120px;
-    font-family: 'Scheherazade', serif;
-    font-weight: 100;
-    font-style: normal;
-    justify-self: center;
-    
-}
-    
-.temprtcher {
-    position: absolute;
-    top: 180px;
-    margin-left: 195px;
-    font-size: 35px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.weather-state{
-    position: absolute;
-    top: 230px;
-    left: 195px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-    
+  .loca-weather {
+    transform: translateY(-450px);
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+  }
 
-}
-.time{
-    position: absolute;
-    top: 250px;
-    left: 195px;
-    font-size: 21px;
-    font-family: 'Scheherazade', serif;
-    justify-self: center;
-}
+  .temprtcher {
+    font-size: 15px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+    transform: translateY(-240px);
+  }
+  .weather-state {
+    transform: translateY(-235px);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.card.Weather-muna{
+  .card.Weather-muna {
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;
     justify-items: center;
-    
-    
-
-
-}
-.humidity {
+  }
+  .humidity {
     position: absolute;
     top: 320px;
-    left: 350px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
+    left: 360px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-  
+    text-align: center;
+  }
 
-
-}
-
-.humidity1 {
+  .humidity1 {
     position: absolute;
     top: 350px;
     left: 360px;
-    font-size: 19px;
-    justify-self: right;
-    font-family: 'Scheherazade', serif;
-  
- 
-}
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.wind {
+  .wind {
     position: absolute;
     top: 318px;
     left: 220px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-}
-.wind1 {
+    text-align: center;
+  }
+  .wind1 {
     position: absolute;
     top: 350px;
     left: 200px;
-    font-size: 19px;
-    justify-self: center;
-    font-family: 'Scheherazade', serif;
-    
-}
-.rain{
-    position: absolute;
-    top: 318px;
-    left: 45px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
     direction: rtl;
-    
-}
-.rain1{
+    text-align: center;
+  }
+  .rain {
+    position: absolute;
+    top: 320px;
+    left: 45px;
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rain1 {
     position: absolute;
     top: 350px;
     left: 60px;
-    font-size: 19px;
-    justify-self: left;
-    font-family: 'Scheherazade', serif;
-}
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", "Tahoma", sans-serif;
+    font-weight: bold; /* سماكة الخط */
+    direction: rtl;
+    text-align: center;
+  }
 
-.loader {
+  .loader {
     margin: 0;
     border: 9px solid #3270ad5e;
     border-top: 9px solid #62a5f1;
@@ -1513,11 +1310,14 @@
     left: 0px;
     top: 0px;
     justify-self: center;
-   
- }
- 
- @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
- }
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="ar" xmlns="http://www.w3.org/1999/html">
+<html lang="ar">
 
 <head>
+    
     <meta charset="UTF-8">
     <title>طقس اليوم</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,11 +25,10 @@
 
         <div class="card-inner" id="cardInner">
         </div>
+        <h1 class="loca-weather" id="loca-weather"></h1>
         <div class="in-said-card" id="insid-card">
-            <h1 class="loca-weather" id="loca-weather"></h1>
-            <p class="temprtcher" id="temp"></p>
-            <p class="weather-state" id="state"></p>
-            <p class="time" id="time"></p>
+            <span class="temprtcher" id="temp"></span>
+            <span class="weather-state" id="state"></span>
             <div class="loadAnimation" id="Lottie">
             </div>
         </div>
@@ -52,9 +52,9 @@
 
     <nav id="mySidebar" class="sidebar">
         <a href="JavaScript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="Home.html">صفحة البداء</a>
-        <a href="Details.html">النشرة الجوية</a>
-        <a href="#clients">حول</a>
+        <a href="Home.html" onclick="closeNav()">البدء</a>
+        <a href="Details.html" onclick="closeNav()">النشرة</a>
+        <a href="more.html" onclick="closeNav()">حول</a>
     </nav>
 
     <div id="main1" class="main-content">
@@ -73,11 +73,10 @@
 
 
     
-    <script src="/javaFile/bodyColor.js"></script>
-    <script src="/javaFile/OCnavbar.js"></script>
-    <script src="/javaFile/service.js"></script>
-    <script src="/javaFile/mobilescreenheight.js"></script>
-    <script src="javaFile/WeatherststIcon.js"></script>
+    <script src="js/bodyColor.js"></script>
+    <script src="js/OCnavbar.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/WeatherststIcon.js"></script>
     
 
 
