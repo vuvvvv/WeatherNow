@@ -36,8 +36,8 @@ function hideelement() {
 function onSuccess() {
   hideelement();
 
-  let locationApiKey = "dcbe7133d6764acc9f01b44eec762204"; // www.opencagedata.com - API للحصول على موقعك بدقه
-  let weatherApiKey = "331c32dd574914f3ea9605314510dac2"; // www.openweathermap.org - API للحصول على معلومات الطقس
+  let locationApiKey = "هنا تضع مفتاح"; // www.opencagedata.com - API للحصول على موقعك بدقه
+  let weatherApiKey = "هنا تضع مفتاح"; // www.openweathermap.org - API للحصول على معلومات الطقس
 
   const savedLocation = localStorage.getItem("userLocation");
   let { latitude, longitude } = JSON.parse(savedLocation);

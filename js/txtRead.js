@@ -1,5 +1,5 @@
 // تحتاج الى بروكسي لي تجاوز المنع للوصول للصفحة
-const proxyUrl = "https://billowing-sun-c1b7.azooz51894.workers.dev/";
+const proxyUrl = "هنا ضع الخادم بروكسي";
 const targetUrl = "https://www.almisnid.com/almisnid/days.php";
 
 fetch(`${proxyUrl}?url=${encodeURIComponent(targetUrl)}`)

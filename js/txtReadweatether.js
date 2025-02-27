@@ -1,5 +1,5 @@
 // تحتاج الى بروكسي لي تجاوز المنع للوصول للصفحة
-const proxyUrll = "https://billowing-sun-c1b7.azooz51894.workers.dev/";
+const proxyUrll = "هنا ضع الخادم بروكسي";
 const targetUrll = "https://ncm.gov.sa/Ar/Weather/LocalWeatherInfo/Pages/Todayweather.aspx";
 
 fetch(`${proxyUrll}?url=${encodeURIComponent(targetUrll)}`)
