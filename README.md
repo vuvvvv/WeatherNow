@@ -1,0 +1,139 @@
+# "WeatherNow ⛅🌍
+
+"مرحبًا بك في تطبيق الطقس! 🌤️"
+
+اكتشف حالة الطقس في مدينتك لحظة بلحظة باستخدام تطبيقنا الذكي. ⛅🌍✨    
+
+😊
+
+هذا تطبيق بسيط يعتمد على api  و بعض طرق استخراج المعلومات من صفحات الويب ..
+الفكرة يعرض لك بطاقات كل بطاقة فيه خصائص 
+
+مثل بطاقة الساعات القادمة و الفصول القادمه 
+
+
+![](image/بطاقة1.JPG)
+![](image/بطاقة2.JPG)
+
+   
+-----------------------------------------------------------------------------------------------------------------
+
+
+#  واجهات الموقع 
+
+![](image/صفحة_البدا.JPG)
+![](image/النشرة_الجوية.JPG)
+![](image/مراجع_للمشروع.JPG)
+
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+
+ ##   دعم اجهزة التابلت و الموبايل  
+
+ ![](image/شاشة_تابلت.JPG)
+ ![](image/شاشة_جوال.JPG)
+
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+ &nbsp;&nbsp;&nbsp; 
+
+
+ تم بناء الموقع بشكل بسيط ومتواضع ليذكرنا بصفحات الويب الجميلة والبسيطة. ✨💻  
+
+
+
+ 
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; 
+
+
+ 
+ @vuvvvv
+ 
