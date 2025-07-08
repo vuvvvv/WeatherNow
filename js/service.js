@@ -1,4 +1,3 @@
-
 function showLocation() {
   if (navigator.geolocation) {
     hideelement();
@@ -18,11 +17,9 @@ function showLocation() {
             longitude: position.coords.longitude,
           };
 
-          
           localStorage.setItem("userLocation", JSON.stringify(coords));
         },
         (error) => {
-          
           showErrorAnimation();
         }
       );
@@ -30,17 +27,14 @@ function showLocation() {
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   } else {
-    
     showErrorAnimation();
   }
 }
 
-
 function onError(error) {
   error.message;
-   
+
   showErrorAnimation();
- 
 }
 
 function onSuccess(position) {
@@ -49,69 +43,61 @@ function onSuccess(position) {
     return;
   }
 
-      let locationApiKey = "dcbe7133d6764acc9f01b44eec762204";
-      let weatherApiKey = "331c32dd574914f3ea9605314510dac2";
-      
-   
-      let { latitude, longitude } = position.coords;
+  let locationApiKey = "api key";
+  let weatherApiKey = "api key";
 
-      fetch(
-        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          let allDetails = data.results[0].components;
+  let { latitude, longitude } = position.coords;
 
-          let { city, neighbourhood: suburb } = allDetails;
-          document.getElementById(
-            "loca-weather"
-          ).innerText = `${city} - ${suburb}`;
-          if (city != undefined && suburb != undefined) {
-            showelement();
-            removeLoader();
-          } else {
-            showErrorAnimation();
-          }
-         
-        
+  fetch(
+    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      let allDetails = data.results[0].components;
 
-          let apiUrl = "https://api.openweathermap.org/data/2.5/weather";
-          return fetch(
-            `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
-          );
-        })
-        .then((responsee) => responsee.json())
-        .then((dataa) => {
-          let { main, wind, clouds } = dataa;
-          let { temp, humidity } = main;
-          let { speed } = wind;
-          let { all } = clouds;
-          let main1 = dataa.weather[0].main;
+      let { city, neighbourhood: suburb } = allDetails;
+      document.getElementById("loca-weather").innerText = `${city} - ${suburb}`;
+      if (city != undefined && suburb != undefined) {
+        showelement();
+        removeLoader();
+      } else {
+        showErrorAnimation();
+      }
 
-          document.getElementById("state").innerText = `${main1}`;
-          document.getElementById("temp").innerText = `${~~temp}°`;
-          document.getElementById("hum").innerText = `${~~humidity} %`;
-          document.getElementById("wind1").innerText = `${~~speed * 4} km/h`;
-          document.getElementById("rain1").innerText = `${~~all} %`;
+      let apiUrl = "https://api.openweathermap.org/data/2.5/weather";
+      return fetch(
+        `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
+      );
+    })
+    .then((responsee) => responsee.json())
+    .then((dataa) => {
+      let { main, wind, clouds } = dataa;
+      let { temp, humidity } = main;
+      let { speed } = wind;
+      let { all } = clouds;
+      let main1 = dataa.weather[0].main;
 
-          
-          return lottie.loadAnimation({
-            container: document.getElementById("Lottie"),
-            path: getWetherstate(main1),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-          });
-        })
-        .catch((error) => {
-          error;
-          showErrorAnimation();
-        });
-   
+      document.getElementById("state").innerText = `${main1}`;
+      document.getElementById("temp").innerText = `${~~temp}°`;
+      document.getElementById("hum").innerText = `${~~humidity} %`;
+      document.getElementById("wind1").innerText = `${~~speed * 4} km/h`;
+      document.getElementById("rain1").innerText = `${~~all} %`;
+
+      return lottie.loadAnimation({
+        container: document.getElementById("Lottie"),
+        path: getWetherstate(main1),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+      });
+    })
+    .catch((error) => {
+      error;
+      showErrorAnimation();
+    });
 }
 onSuccess();
 showLocation();
-
 
 function removeLoader() {
   let loader = document.querySelector(".loader");
@@ -119,7 +105,6 @@ function removeLoader() {
     loader.remove();
   }
 }
-
 
 function showelement() {
   const div1 = document.querySelector(".Weather-muna");
@@ -139,7 +124,6 @@ function hideelement() {
   div2.style.visibility = "hidden";
 }
 
-
 function showErrorAnimation() {
   showelement();
   lottie.loadAnimation({
@@ -153,5 +137,4 @@ function showErrorAnimation() {
   removeLoader();
   document.getElementById("Lottie").style.visibility = "visible";
   document.getElementById("Lottie").style.marginTop = "50px";
-
 }
