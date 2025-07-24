@@ -1,147 +1,22 @@
-# "WeatherNow" ⛅🌍
+# ⛅🌍 WeatherNow
 
+<br><br>
+![](image/main.gif)
+<br><br>
+**The website is designed to make building applications incredibly simple. You won’t need to put in a lot of effort or start from scratch. By using available APIs, you can create your applications quickly and efficiently. This means significant savings in time and effort, allowing you to focus on innovative ideas instead of complex details. ✨💻**
+<br><br>
+<br><br>
+<br><br>
 
+---
 
-* https://weather-990.web.app/ 
+![](image/phone.gif)
+<br><br>
+<br><br>
+<br><br>
 
+# Test
 
-
-صُمم موقع ليجعل عملية بناء التطبيقات غاية في البساطة. لن تحتاج إلى بذل جهد كبير أو البدء من الصفر، فباستخدام واجهات برمجة التطبيقات (APIs) المتاحة، يمكنك إنشاء تطبيقاتك بسرعة وكفاءة. هذا يعني توفيرًا هائلًا في الوقت والجهد، وتركيزك على الأفكار المبتكرة بدلًا من التفاصيل المعقدة.✨💻
-
-
-
-
- 
-#  واجهات الموقع 
-
-مثل بطاقة الساعات القادمة و الفصول القادمه 
-
-
-![](image/بطاقة1.JPG)
-![](image/بطاقة2.JPG)
-
-   
-
-
-## صفحة البداء
-![](image/صفحة_البدا.JPG)
-
-
-## صفحة النشرة الجوية 
-![](image/النشرة_الجوية.JPG)
-
-## صفحة المراجع 
-
-![](image/مراجع_للمشروع.JPG)
-
-
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
- &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
-
-## دعم أحجام الشاشات المختلفة 
-
- ![](image/شاشة_تابلت.JPG)
- ![](image/شاشة_جوال.JPG)
-
-
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
- &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
- &nbsp;&nbsp;&nbsp; 
-
-  
-
-
-
- 
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
-
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-
-
- 
- @vuvvvv
- 
+https://vuvvvv.github.io/WeatherNow/
+<br><br>
+@vuvvvv
