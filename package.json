@@ -1,4 +1,5 @@
 {
+  "homepage": "https://vuvvvv.github.io/WeatherNow",
   "dependencies": {
     "cors": "^2.8.5",
     "date-and-time": "^3.6.0",
@@ -7,5 +8,12 @@
     "jsdom": "^26.0.0",
     "puppeteer": "^24.1.1",
     "selenium-webdriver": "^4.28.1"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

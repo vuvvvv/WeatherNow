@@ -43,59 +43,115 @@ function onSuccess(position) {
     return;
   }
 
-  let locationApiKey = "api key";
-  let weatherApiKey = "api key";
-
   let { latitude, longitude } = position.coords;
 
-  fetch(
-    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      let allDetails = data.results[0].components;
-
-      let { city, neighbourhood: suburb } = allDetails;
-      document.getElementById("loca-weather").innerText = `${city} - ${suburb}`;
-      if (city != undefined && suburb != undefined) {
-        showelement();
-        removeLoader();
-      } else {
-        showErrorAnimation();
+  // First fetch
+  fetch("https://summer-voice-458b.azooz51894.workers.dev/get-api-keys", {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer 43259a04-d342-4398-a769-43d7739de7bb",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-      let apiUrl = "https://api.openweathermap.org/data/2.5/weather";
-      return fetch(
-        `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
-      );
+      return response.json();
     })
-    .then((responsee) => responsee.json())
-    .then((dataa) => {
-      let { main, wind, clouds } = dataa;
-      let { temp, humidity } = main;
-      let { speed } = wind;
-      let { all } = clouds;
-      let main1 = dataa.weather[0].main;
+    .then((data) => {
+      const locationApiKey = data.locationApiKey;
+      const weatherApiKey = data.weatherApiKey;
 
-      document.getElementById("state").innerText = `${main1}`;
-      document.getElementById("temp").innerText = `${~~temp}°`;
-      document.getElementById("hum").innerText = `${~~humidity} %`;
-      document.getElementById("wind1").innerText = `${~~speed * 4} km/h`;
-      document.getElementById("rain1").innerText = `${~~all} %`;
+      // Second fetch 
+      return fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const allDetails = data.results[0].components;
 
-      return lottie.loadAnimation({
-        container: document.getElementById("Lottie"),
-        path: getWetherstate(main1),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-      });
+          const city =
+            allDetails.city ||
+            allDetails.state ||
+            allDetails.province ||
+            allDetails._normalized_city ||
+            "";
+          const suburb =
+            allDetails.neighbourhood ||
+            allDetails.suburb ||
+            allDetails.quarter ||
+            allDetails._normalized_suburb ||
+            allDetails._normalized_neighbourhood ||
+            allDetails.town ||
+            allDetails._normalized_city ||
+            allDetails.province ||
+            "";
+
+          document.getElementById(
+            "loca-weather"
+          ).innerText = `${city} - ${suburb}`;
+
+          if (city && suburb) {
+            // Assuming showelement() and removeLoader() are defined elsewhere
+            showelement();
+            removeLoader();
+          } else {
+            // Assuming lottie.destroy() and showErrorAnimation() are defined elsewhere
+            lottie.destroy();
+            showErrorAnimation();
+          }
+
+          // Third fetch (nested): Get weather details using the obtained weatherApiKey
+          const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
+          return fetch(
+            `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
+          );
+        })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const { main, wind, clouds, weather } = data;
+          const { temp, humidity } = main;
+          const { speed } = wind;
+          const { all } = clouds;
+          const mainWeather = weather[0].main;
+
+          document.getElementById("state").innerText = `${mainWeather}`;
+          document.getElementById("temp").innerText = `${Math.round(temp)}°`;
+          document.getElementById("hum").innerText = `${Math.round(
+            humidity
+          )} %`;
+          document.getElementById("wind1").innerText = `${Math.round(
+            speed * 4
+          )} km/h`;
+          document.getElementById("rain1").innerText = `${Math.round(all)} %`;
+
+          // Assuming lottie.loadAnimation and getWetherstate are defined elsewhere
+          return lottie.loadAnimation({
+            container: document.getElementById("Lottie"),
+            path: getWetherstate(mainWeather),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+          });
+        });
     })
     .catch((error) => {
-      error;
+      console.error("Error in fetching data:", error);
       showErrorAnimation();
+      removeLoader(); // Ensure loader is removed even on error
     });
 }
+
 onSuccess();
 showLocation();
 

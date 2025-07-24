@@ -1,178 +1,240 @@
 function onSuccess() {
-  hideelement();
+  hideelement(); // Assume hideelement() is defined elsewhere
 
-  let locationApiKey = "api key";
-  let weatherApiKey = "api key";
 
-  const savedLocation = localStorage.getItem("userLocation");
-  let { latitude, longitude } = JSON.parse(savedLocation);
-  console.log(savedLocation);
-
-  fetch(
-    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      let allDetails = data.results[0].components;
-
-      let { city, neighbourhood: suburb } = allDetails;
-      document.getElementById(
-        "loca-weather2"
-      ).innerText = `${city} - ${suburb}`;
-      console.log(allDetails);
-      let apiUrl = "https://api.openweathermap.org/data/2.5/weather";
-
-      return fetch(
-        `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
-      );
+  fetch("https://summer-voice-458b.azooz51894.workers.dev/get-api-keys", {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer 43259a04-d342-4398-a769-43d7739de7bb",
+    },
+  })
+    .then((apiKeysResponse) => {
+      if (!apiKeysResponse.ok) {
+        throw new Error(`HTTP error! status: ${apiKeysResponse.status}`);
+      }
+      return apiKeysResponse.json();
     })
+    .then((apiKeysData) => {
+      const locationApiKey = apiKeysData.locationApiKey;
+      const weatherApiKey = apiKeysData.weatherApiKey;
 
-    .then((responsee) => responsee.json())
-    .then((dataa) => {
-      let { main, weather } = dataa;
-      let { temp_max, temp_min } = main;
-      let { description } = weather[0];
+      // Get location from localStorage
+      const savedLocation = localStorage.getItem("userLocation");
+      if (!savedLocation) {
+        throw new Error("User location not found in localStorage.");
+      }
+      const { latitude, longitude } = JSON.parse(savedLocation);
 
-      let main1 = dataa.weather[0].main;
-
-      document.getElementById("temp_max").innerText = `${~~temp_max}°C`;
-      document.getElementById("description").innerText = `${description}`;
-
-      let apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?";
-      lottie.loadAnimation({
-        container: document.getElementById("Lottie2"),
-        path: getWetherstate(main1),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-      });
-
-      fetch(
-        `${apiUrl2}lat=${latitude}&lon=${longitude}&cnt=7&appid=${weatherApiKey}&units=metric`
+      // 2. Fetch Location Details (OpenCageData)
+      return fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${locationApiKey}`
       )
-        .then((responseee) => responseee.json())
-        .then((dataaa) => {
-          let { city } = dataaa;
-          let { name } = city;
+        .then((locationResponse) => {
+          if (!locationResponse.ok) {
+            throw new Error(`HTTP error! status: ${locationResponse.status}`);
+          }
+          return locationResponse.json();
+        })
+        .then((locationData) => {
+          const allDetails = locationData.results[0].components;
 
-          fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min`
+          const city =
+            allDetails.city ||
+            allDetails.state ||
+            allDetails.province ||
+            allDetails._normalized_city ||
+            "";
+          const suburb =
+            allDetails.neighbourhood ||
+            allDetails.suburb ||
+            allDetails.quarter ||
+            allDetails._normalized_suburb ||
+            allDetails._normalized_neighbourhood ||
+            allDetails.town ||
+            allDetails._normalized_city ||
+            allDetails.province ||
+            "";
+          document.getElementById(
+            "loca-weather2"
+          ).innerText = `${city} - ${suburb}`;
+
+          // 3. Fetch Current Weather Details (OpenWeatherMap)
+          const currentWeatherApiUrl =
+            "https://api.openweathermap.org/data/2.5/weather";
+          return fetch(
+            `${currentWeatherApiUrl}?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
           )
-            .then((response) => response.json())
-            .then((data) => {
-              const { daily } = data;
-              const { temperature_2m_max, temperature_2m_min, weather_code } =
-                daily;
+            .then((currentWeatherResponse) => {
+              if (!currentWeatherResponse.ok) {
+                throw new Error(
+                  `HTTP error! status: ${currentWeatherResponse.status}`
+                );
+              }
+              return currentWeatherResponse.json();
+            })
+            .then((currentWeatherData) => {
+              const { main, weather } = currentWeatherData;
+              const { temp_max, temp_min } = main;
+              const { description } = weather[0];
+              const mainWeather = weather[0].main;
 
-              const dailyday = {};
+              document.getElementById("temp_max").innerText = `${Math.round(
+                temp_max
+              )}°C`;
+              document.getElementById(
+                "description"
+              ).innerText = `${description}`;
 
-              daily.time.forEach((time, index) => {
-                const maxTemp = temperature_2m_max[index];
-                const minTemp = temperature_2m_min[index];
-                const code = weather_code[index];
-
-                if (!dailyday[time]) {
-                  dailyday[time] = [];
-                }
-                dailyday[time].push({ maxTemp, minTemp, code });
+              // Load Lottie animation for current weather
+              lottie.loadAnimation({
+                container: document.getElementById("Lottie2"),
+                path: getWetherstate(mainWeather), // Assume getWetherstate() is defined elsewhere
+                renderer: "svg",
+                loop: true,
+                autoplay: true,
               });
 
-              const dayDiv2 = document.getElementById("card-body4");
-              dayDiv2.style.display = "flex";
-              dayDiv2.style.flexDirection = "row";
-              dayDiv2.style.alignItems = "Center";
-              dayDiv2.style.direction = "rtl";
-              dayDiv2.style.fontSize = "21px";
-              dayDiv2.style.fontWeight = "bold";
-              dayDiv2.style.fontFamily = "Scheherazade, serif";
-              dayDiv2.style.overflow = "scroll";
-              dayDiv2.style.scrollbarWidth = "none";
-              dayDiv2.style.color = "rgb(0, 0, 0)";
-              dayDiv2.style.justifyContent = "center";
-              dayDiv2.style.margin = "-10px";
+              // 4. Fetch 7-day Forecast (OpenWeatherMap Forecast API)
+              const forecastApiUrl2 =
+                "https://api.openweathermap.org/data/2.5/forecast?";
+              return fetch(
+                `${forecastApiUrl2}lat=${latitude}&lon=${longitude}&cnt=7&appid=${weatherApiKey}&units=metric`
+              )
+                .then((forecastResponse) => {
+                  if (!forecastResponse.ok) {
+                    throw new Error(
+                      `HTTP error! status: ${forecastResponse.status}`
+                    );
+                  }
+                  return forecastResponse.json();
+                })
+                .then((forecastData) => {
+                  const dailyForecasts = {};
+                  forecastData.list.map((item) => {
+                    const date = item.dt_txt.split(" ")[0];
+                    if (!dailyForecasts[date]) {
+                      dailyForecasts[date] = [];
+                    }
+                    dailyForecasts[date].push(item || {});
+                  });
 
-              for (const [date, details] of Object.entries(dailyday)) {
-                details.forEach((detail) => {
-                  const allday1 = document.createElement("span");
-                  allday1.innerText = `${getDate(
-                    date
-                  )}|\n${~~detail.maxTemp}° \n${~~detail.minTemp}°\n${getcodestate(
-                    detail.code
-                  )}`;
+                  const dayDiv = document.getElementById("transparent-card2");
+                  dayDiv.style.display = "flex";
+                  dayDiv.style.flexDirection = "column";
+                  dayDiv.style.alignItems = "Center";
+                  dayDiv.style.direction = "rtl";
+                  dayDiv.style.borderRadius = "19px";
+                  dayDiv.style.overflow = "auto";
+                  dayDiv.style.scrollbarWidth = "none";
+                  dayDiv.style.color = "rgb(0, 0, 0)";
 
-                  dayDiv2.appendChild(allday1);
+                  for (const [date, forecasts] of Object.entries(
+                    dailyForecasts
+                  )) {
+                    forecasts.forEach((forecast) => {
+                      const time = forecast.dt_txt.split(" ")[1];
+                      const temp = forecast.main.temp;
+                      const hh = time.split(":")[0];
+                      const description = forecast.weather[0].description;
+                      const period = hh < 12 ? "ص" : "م";
+                      const formattedTime = `${hh} ${period}`;
+
+                      const dayLabel = document.createElement("p");
+                      dayDiv.appendChild(dayLabel);
+                      dayLabel.style.margin = "5px 0";
+                      dayLabel.style.color = "rgb(0, 0, 0)";
+                      dayLabel.style.fontSize = "29px";
+                      dayLabel.style.fontFamily = "Scheherazade, serif";
+                      dayLabel.style.fontWeight = "bold";
+                      dayLabel.style.direction = "ltr";
+
+                      const descriptionSpan = document.createElement("span");
+                      descriptionSpan.innerText = ` ${getWetherstateday(
+                        description
+                      )}   `; // Assume getWetherstateday() is defined elsewhere
+
+                      const tempSpan = document.createElement("span");
+                      tempSpan.innerText = `${Math.round(temp)}°C`;
+
+                      const timeSpan = document.createElement("span");
+                      timeSpan.innerText = `${formattedTime}`;
+                      timeSpan.style.fontSize = "12px";
+                      timeSpan.style.color = "rgb(0, 0, 0)";
+
+                      dayLabel.appendChild(descriptionSpan);
+                      dayLabel.appendChild(tempSpan);
+                      dayLabel.appendChild(timeSpan);
+                    });
+                  }
+
+                  // 5. Fetch Daily Forecast (Open-Meteo)
+                  return fetch(
+                    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min`
+                  )
+                    .then((openMeteoResponse) => {
+                      if (!openMeteoResponse.ok) {
+                        throw new Error(
+                          `HTTP error! status: ${openMeteoResponse.status}`
+                        );
+                      }
+                      return openMeteoResponse.json();
+                    })
+                    .then((openMeteoData) => {
+                      const { daily } = openMeteoData;
+                      const {
+                        temperature_2m_max,
+                        temperature_2m_min,
+                        weather_code,
+                      } = daily;
+
+                      const dailyday = {};
+                      daily.time.forEach((time, index) => {
+                        const maxTemp = temperature_2m_max[index];
+                        const minTemp = temperature_2m_min[index];
+                        const code = weather_code[index];
+
+                        if (!dailyday[time]) {
+                          dailyday[time] = [];
+                        }
+                        dailyday[time].push({ maxTemp, minTemp, code });
+                      });
+
+                      const dayDiv2 = document.getElementById("card-body4");
+                      dayDiv2.style.display = "flex";
+                      dayDiv2.style.flexDirection = "row";
+                      dayDiv2.style.alignItems = "Center";
+                      dayDiv2.style.direction = "rtl";
+                      dayDiv2.style.fontSize = "21px";
+                      dayDiv2.style.fontWeight = "bold";
+                      dayDiv2.style.fontFamily = "Scheherazade, serif";
+                      dayDiv2.style.overflow = "scroll";
+                      dayDiv2.style.scrollbarWidth = "none";
+                      dayDiv2.style.color = "rgb(0, 0, 0)";
+                      dayDiv2.style.justifyContent = "center";
+                      dayDiv2.style.margin = "-10px";
+
+                      for (const [date, details] of Object.entries(dailyday)) {
+                        details.forEach((detail) => {
+                          const allday1 = document.createElement("span");
+                          allday1.innerText = `${getDate(date)}|\n${Math.round(
+                            detail.maxTemp
+                          )}° \n${Math.round(detail.minTemp)}°\n${getcodestate(
+                            detail.code
+                          )}`; // Assume getDate() and getcodestate() are defined elsewhere
+
+                          dayDiv2.appendChild(allday1);
+                        });
+                      }
+
+                      showelement(); // Assume showelement() is defined elsewhere
+                    });
                 });
-              }
-            })
-            .catch((error) => showErrorAnimation());
-
-          const dailyForecasts = {};
-
-          // تقسيم البيانات إلى أيام
-          dataaa.list.map((item) => {
-            const date = item.dt_txt.split(" ")[0];
-            if (!dailyForecasts[date]) {
-              dailyForecasts[date] = [];
-            }
-            dailyForecasts[date].push(item || {});
-          });
-
-          for (const [date, forecasts] of Object.entries(dailyForecasts)) {
-            const dayDiv = document.getElementById("transparent-card2");
-            dayDiv.style.display = "flex";
-            dayDiv.style.flexDirection = "column";
-            dayDiv.style.alignItems = "Center";
-            dayDiv.style.direction = "rtl";
-            dayDiv.style.borderRadius = "19px";
-            dayDiv.style.overflow = "auto";
-            dayDiv.style.scrollbarWidth = "none";
-            dayDiv.style.color = "rgb(0, 0, 0)";
-
-            forecasts.forEach((forecast) => {
-              const time = forecast.dt_txt.split(" ")[1];
-              const temp = forecast.main.temp;
-              const hh = time.split(":")[0];
-              const description = forecast.weather[0].description;
-              const period = hh < 12 ? "ص" : "م";
-              const formattedTime = `${hh} ${period}`;
-
-              const dayLabel = document.createElement("p");
-              dayDiv.appendChild(dayLabel);
-              dayLabel.style.margin = "5px 0";
-              dayLabel.style.color = "rgb(0, 0, 0)";
-              dayLabel.style.fontSize = "29px";
-              dayLabel.style.fontFamily = "Scheherazade, serif";
-              dayLabel.style.fontWeight = "bold";
-              dayLabel.style.direction = "ltr";
-
-              const descriptionSpan = document.createElement("span");
-              descriptionSpan.innerText = ` ${getWetherstateday(
-                description
-              )}   `;
-
-              const tempSpan = document.createElement("span");
-              tempSpan.innerText = `${~~temp}°C`;
-
-              const timeSpan = document.createElement("span");
-              timeSpan.innerText = `${formattedTime}`;
-              timeSpan.style.fontSize = "12px";
-              timeSpan.style.color = "rgb(0, 0, 0)";
-
-              dayLabel.appendChild(descriptionSpan);
-              dayLabel.appendChild(tempSpan);
-              dayLabel.appendChild(timeSpan);
             });
-          }
-
-          showelement();
-        })
-        .catch((error) => {
-          showErrorAnimation();
         });
     })
-
     .catch((error) => {
-      showErrorAnimation();
+      console.error("Error in fetching weather data:", error);
+      showErrorAnimation(); // Assume showErrorAnimation() is defined elsewhere
     });
 }
 
